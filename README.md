@@ -1,15 +1,25 @@
-# Badr Albdulmajeed Online CV Portfolio
+# Badr Albdulmajeed Professional Online CV Portfolio
 
-This is a static online CV and portfolio website for Badr Albdulmajeed. It includes project visuals, animated sections, E-Portfolio SWOT analysis, contact links, and a web-safe downloadable CV.
+This is an updated static portfolio website for Badr Albdulmajeed.
 
-## Contents
+## What was improved
 
-- `index.html` - website content
-- `contact.html` - dedicated contact page with email and WhatsApp actions
-- `styles.css` - responsive design and theme styling
-- `script.js` - dark mode, project filtering, reveal animation, and contact form behavior
-- `assets/` - profile photo, project images, and web-safe downloadable CV
+- More professional hero section with animated engineering visual.
+- Animated scroll reveal effects, scroll progress bar, floating cards, ticker, counters, and hover tilt cards.
+- Cleaner project cards with filters by AI Vision, Power, Automation, and Robotics.
+- Better mobile navigation and responsive layout.
+- Improved contact page with email, WhatsApp, LinkedIn, CV download, and copy-email action.
+- Dark/light theme toggle saved in the browser.
+- No external libraries required, so it is ready for GitHub Pages.
 
-## GitHub Pages
+## Files
 
-This site is ready to publish through GitHub Pages from the repository root or from the `main` branch.
+- `index.html` - main portfolio page.
+- `contact.html` - dedicated contact page.
+- `styles.css` - full responsive styling and animations.
+- `script.js` - theme, mobile menu, filters, reveal animation, counters, hover effects, contact form, and copy email.
+
+## Notes
+
+Keep your existing `assets/` folder in the same directory if you already have your profile photo, project images, or downloadable CV.
+The website will still work if the profile photo is missing because it shows a fallback BA card.

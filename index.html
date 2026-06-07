@@ -5,194 +5,228 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Online CV and portfolio for Badr Albdulmajeed, final-year Electrical and Electronic Engineering student focused on AI vision, automation, embedded systems, and power engineering."
+      content="Professional online CV and engineering portfolio for Badr Albdulmajeed, focused on AI vision, automation, embedded systems, robotics, and power engineering."
     />
-    <title>Badr Albdulmajeed | Online CV Portfolio</title>
+    <title>Badr Albdulmajeed | Engineering Portfolio</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="page-loader" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
     <header class="topbar" aria-label="Primary navigation">
       <a class="brand" href="#home" aria-label="Badr Albdulmajeed home">
         <span class="brand-mark">BA</span>
-        <span>Badr Albdulmajeed</span>
+        <span class="brand-text">Badr Albdulmajeed</span>
       </a>
-      <nav class="nav-links" aria-label="Page sections">
-        <a href="#work">Work</a>
+
+      <nav class="nav-links" id="siteNav" aria-label="Page sections">
+        <a href="#work">Experience</a>
         <a href="#skills">Skills</a>
-        <a href="#swot">SWOT</a>
         <a href="#projects">Projects</a>
-        <a href="contact.html">Contact</a>
+        <a href="#swot">SWOT</a>
+        <a href="#contact">Contact</a>
       </nav>
-      <button class="icon-button" id="themeToggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
-        <span aria-hidden="true">◐</span>
-      </button>
+
+      <div class="top-actions">
+        <button class="icon-button" id="themeToggle" type="button" aria-label="Toggle theme" title="Toggle theme">
+          <span aria-hidden="true">◐</span>
+        </button>
+        <button class="menu-button" id="menuToggle" type="button" aria-controls="siteNav" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </header>
 
     <main id="home">
-      <section class="hero-section">
+      <section class="hero-section section-shell">
         <div class="hero-copy reveal">
-          <p class="eyebrow">Electrical & Electronic Engineering</p>
-          <h1>AI vision, automation, embedded systems, and power engineering in one practical portfolio.</h1>
-          <p>
-            I am Badr Albdulmajeed, a final-year Electrical and Electronic Engineering student at Asia Pacific University.
-            My work focuses on practical systems where hardware, software, control, power, and AI are connected together
-            and tested as real engineering solutions.
+          <p class="eyebrow">Electrical & Electronic Engineering Portfolio</p>
+          <h1>Building practical systems across AI vision, automation, robotics, and power engineering.</h1>
+          <p class="hero-lead">
+            I am a final-year Electrical and Electronic Engineering student at Asia Pacific University. My work connects
+            hardware, software, control, power, and AI into tested engineering systems, from industrial machine vision to
+            power protection studies and autonomous robot subsystems.
           </p>
+
           <div class="hero-actions">
-            <a class="button primary" href="#projects">Explore Projects</a>
-            <a class="button secondary" href="contact.html">Contact Me</a>
-            <a class="button ghost" href="assets/Badr_Online_CV.docx" download>Download CV</a>
+            <a class="button primary magnetic" href="#projects">View Projects</a>
+            <a class="button secondary magnetic" href="contact.html">Contact Me</a>
+            <a class="button ghost magnetic" href="assets/Badr_Online_CV.docx" download>Download CV</a>
+          </div>
+
+          <div class="hero-stats" aria-label="Portfolio highlights">
+            <article>
+              <strong data-count="27">0</strong>
+              <span>Projects</span>
+            </article>
+            <article>
+              <strong data-count="5">0</strong>
+              <span>AI areas</span>
+            </article>
+            <article>
+              <strong data-count="4">0</strong>
+              <span>Core domains</span>
+            </article>
           </div>
         </div>
 
-        <aside class="hero-visual reveal" aria-label="Profile and project preview">
-          <div class="orbit-ring" aria-hidden="true"></div>
-          <img class="profile-photo" src="assets/badr-photo.jpg" alt="Portrait of Badr Albdulmajeed" />
-          <div class="floating-card card-ai">
+        <aside class="hero-visual reveal" aria-label="Animated engineering profile visual">
+          <div class="circuit-board" aria-hidden="true">
+            <span class="node node-a"></span>
+            <span class="node node-b"></span>
+            <span class="node node-c"></span>
+            <span class="node node-d"></span>
+            <span class="pulse-line line-a"></span>
+            <span class="pulse-line line-b"></span>
+            <span class="pulse-line line-c"></span>
+          </div>
+
+          <div class="profile-card tilt-card">
+            <div class="profile-frame">
+              <img src="assets/badr-photo.jpg" alt="Portrait of Badr Albdulmajeed" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+              <div class="photo-fallback">BA</div>
+            </div>
+            <div>
+              <p class="eyebrow">Current Focus</p>
+              <h2>AI Vision + Embedded Engineering</h2>
+              <p>Computer vision, robotics, power systems, MATLAB/Simulink, and industrial automation.</p>
+            </div>
+          </div>
+
+          <div class="floating-badge badge-ai">
             <span>AI Vision</span>
             <strong>YOLOv8 · ViT · OpenCV</strong>
           </div>
-          <div class="floating-card card-power">
-            <span>Power Systems</span>
-            <strong>Relay coordination · Power flow</strong>
+          <div class="floating-badge badge-power">
+            <span>Power</span>
+            <strong>Relay Coordination · Power Flow</strong>
           </div>
-          <div class="status-strip">
-            <span>R&D Internship</span>
-            <span>27+ Projects</span>
-            <span>Final Year EEE</span>
+          <div class="floating-badge badge-embedded">
+            <span>Embedded</span>
+            <strong>Raspberry Pi · Jetson · ESP32</strong>
           </div>
         </aside>
       </section>
 
+      <section class="ticker-section" aria-label="Technical keywords">
+        <div class="ticker-track">
+          <span>Machine Vision</span><span>PLC Automation</span><span>PowerWorld</span><span>MATLAB App Designer</span>
+          <span>ONNX Runtime</span><span>Roboflow</span><span>Jetson Orin Nano</span><span>Simulink</span>
+          <span>YOLOv8</span><span>PyQt5</span><span>Relay Protection</span><span>ZED 2i</span>
+          <span>Machine Vision</span><span>PLC Automation</span><span>PowerWorld</span><span>MATLAB App Designer</span>
+          <span>ONNX Runtime</span><span>Roboflow</span><span>Jetson Orin Nano</span><span>Simulink</span>
+          <span>YOLOv8</span><span>PyQt5</span><span>Relay Protection</span><span>ZED 2i</span>
+        </div>
+      </section>
+
       <section class="metrics-band reveal" aria-label="Career snapshot">
-        <article>
+        <article class="tilt-card">
           <span>01</span>
           <h2>Industrial AI</h2>
-          <p>Machine vision systems for classification, detection, segmentation, and quality control.</p>
+          <p>Classification, object detection, segmentation, quality control, model testing, and deployment planning.</p>
         </article>
-        <article>
+        <article class="tilt-card">
           <span>02</span>
           <h2>Automation</h2>
-          <p>PLC exposure, embedded boards, sensors, GUI testing, and Industry 4.0 workflow integration.</p>
+          <p>PLC exposure, sensor interfacing, Raspberry Pi, Jetson, ESP32, GUI testing, and Industry 4.0 workflow links.</p>
         </article>
-        <article>
+        <article class="tilt-card">
           <span>03</span>
           <h2>Power Engineering</h2>
-          <p>Power flow analysis, IDMT relay coordination, protection curves, and microgrid simulation.</p>
+          <p>Power flow studies, IDMT relay settings, IEC/IEEE inverse curves, TCC plots, and microgrid simulation.</p>
         </article>
       </section>
 
       <section class="section split-section" id="work">
         <div class="section-heading sticky-heading reveal">
           <p class="eyebrow">Experience</p>
-          <h2>Industrial work with practical testing.</h2>
+          <h2>Practical engineering work with testing and documentation.</h2>
           <p>
-            This section shows how my internship connected university knowledge with real machine vision, automation, and
-            documentation work.
+            My internship connected university engineering knowledge with real systems. The work covered data preparation,
+            model training, GUI testing, hardware interfacing, automation workflow support, and project documentation.
           </p>
         </div>
         <div class="work-panel reveal">
-          <div class="work-image-stack">
-            <img src="assets/projects/internship-overview.jpg" alt="Internship presentation overview slide" />
-            <img src="assets/projects/machine-vision-workflow.jpg" alt="Machine vision workflow slide" />
-          </div>
-          <article class="timeline-card">
+          <article class="timeline-card feature-card tilt-card">
             <div class="timeline-date">Mar 2025 - Jul 2025</div>
             <div>
               <h3>R&D Project Engineer, Control easy</h3>
               <p>
-                I developed and deployed machine vision systems for industrial quality control. The work covered fabric
+                Developed and supported machine vision systems for industrial quality control. The work included fabric
                 classification, PCB component inspection, wood defect segmentation, golf ball classification, GUI testing,
-                hardware interfacing, PLC workflow integration, and technical documentation.
+                hardware interfacing, PLC workflow integration, and technical manuals.
               </p>
               <ul>
                 <li>Built a real-time golf ball quality control station using Raspberry Pi 5 and a Vision Transformer model.</li>
-                <li>Safely interfaced a 24V industrial sensor with a 3.3V Raspberry Pi using a relay circuit.</li>
-                <li>Prepared technical manuals from dataset creation and model training to GUI and hardware setup.</li>
+                <li>Interfaced a 24V industrial sensor with a 3.3V Raspberry Pi using a relay circuit.</li>
+                <li>Prepared manuals covering dataset creation, training, GUI setup, hardware wiring, and testing.</li>
               </ul>
             </div>
           </article>
+
+          <div class="process-grid">
+            <article class="process-card reveal">
+              <span>01</span>
+              <h3>Dataset</h3>
+              <p>Collect, label, clean, augment, and organise images before training.</p>
+            </article>
+            <article class="process-card reveal">
+              <span>02</span>
+              <h3>Model</h3>
+              <p>Train classification, detection, and segmentation models using practical metrics.</p>
+            </article>
+            <article class="process-card reveal">
+              <span>03</span>
+              <h3>Deploy</h3>
+              <p>Test on PC or embedded boards, then connect the model with a GUI or sensor workflow.</p>
+            </article>
+          </div>
         </div>
       </section>
 
       <section class="section" id="skills">
         <div class="section-heading reveal">
           <p class="eyebrow">Skills</p>
-          <h2>Technical strengths grouped by real use.</h2>
+          <h2>Technical skills grouped by real engineering use.</h2>
         </div>
+
         <div class="skill-groups">
-          <article class="skill-card reveal">
+          <article class="skill-card reveal tilt-card">
+            <div class="skill-icon">AI</div>
             <h3>Computer Vision & AI</h3>
             <p>OpenCV, Roboflow, YOLOv8, Vision Transformer, PyTorch, ONNX Runtime GPU, classification, detection, segmentation, annotation, and augmentation.</p>
           </article>
-          <article class="skill-card reveal">
+          <article class="skill-card reveal tilt-card">
+            <div class="skill-icon">HW</div>
             <h3>Embedded & Robotics</h3>
             <p>Raspberry Pi 5, NVIDIA Jetson Orin Nano, ESP32, Arduino, sensors, ZED 2i stereo camera, RGB-D sensing, LiDAR integration, and RFID access control.</p>
           </article>
-          <article class="skill-card reveal">
+          <article class="skill-card reveal tilt-card">
+            <div class="skill-icon">PLC</div>
             <h3>Automation & PLC</h3>
             <p>Siemens S7-300, S7-200, S7-1200, TIA Portal SCL, PLC-controlled workflows, pneumatic circuits, and Industry 4.0 machine integration.</p>
           </article>
-          <article class="skill-card reveal">
+          <article class="skill-card reveal tilt-card">
+            <div class="skill-icon">PS</div>
             <h3>Power Systems</h3>
             <p>Power flow analysis, overcurrent relay coordination, IDMT relay settings, IEC/IEEE inverse curves, TCC plotting, fault analysis, CTs, and circuit breaker logic.</p>
           </article>
-          <article class="skill-card reveal">
+          <article class="skill-card reveal tilt-card">
+            <div class="skill-icon">CAD</div>
             <h3>Simulation & Design</h3>
             <p>MATLAB, Simulink, MATLAB App Designer, LabVIEW, PowerWorld Simulator, SolidWorks, Dialux, LTspice, and Tinkercad.</p>
           </article>
-          <article class="skill-card reveal">
+          <article class="skill-card reveal tilt-card">
+            <div class="skill-icon">GUI</div>
             <h3>Programming & GUI</h3>
             <p>Python, C, C++, C#, PyQt5, Streamlit, MATLAB GUI/App Designer, basic web tools, and IoT dashboard work.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section swot-section" id="swot">
-        <div class="section-heading reveal">
-          <p class="eyebrow">E-Portfolio SWOT</p>
-          <h2>Personal engineering development analysis.</h2>
-          <p>
-            This SWOT analysis is included for my E-Portfolio and is based on my CV, project experience, internship work,
-            and PO attainment reflection.
-          </p>
-        </div>
-        <div class="swot-grid">
-          <article class="swot-card strength reveal">
-            <span>S</span>
-            <h3>Strengths</h3>
-            <p>
-              I have strong practical project experience in computer vision, AI, embedded systems, PLC automation, power
-              systems, relay protection, and GUI development. My internship also improved my ability to test, troubleshoot,
-              document, and explain engineering systems clearly.
-            </p>
-          </article>
-          <article class="swot-card weakness reveal">
-            <span>W</span>
-            <h3>Weaknesses</h3>
-            <p>
-              My problem analysis can still be improved by breaking down complex engineering problems more clearly and
-              comparing possible methods before selecting a solution. I also need stronger reflection on teamwork roles,
-              ethics, and professional responsibility.
-            </p>
-          </article>
-          <article class="swot-card opportunity reveal">
-            <span>O</span>
-            <h3>Opportunities</h3>
-            <p>
-              Final-year projects, AI and machine vision certification, power system protection learning, PLC exposure,
-              NAFEM or simulation learning, and portfolio development can help me improve my professional engineering
-              profile.
-            </p>
-          </article>
-          <article class="swot-card threat reveal">
-            <span>T</span>
-            <h3>Threats</h3>
-            <p>
-              AI, automation, embedded systems, and power technologies change quickly, so falling behind can reduce career
-              opportunities. Time management is also important because project work, university study, and skill improvement
-              can happen at the same time.
-            </p>
           </article>
         </div>
       </section>
@@ -201,65 +235,114 @@
         <div class="section-heading reveal">
           <p class="eyebrow">Projects</p>
           <h2>Selected project evidence and engineering work.</h2>
+          <p>Use the filters to view projects by domain.</p>
         </div>
+
         <div class="filter-row reveal" aria-label="Project filters">
           <button class="filter-chip active" type="button" data-filter="all">All</button>
           <button class="filter-chip" type="button" data-filter="ai">AI Vision</button>
           <button class="filter-chip" type="button" data-filter="power">Power</button>
           <button class="filter-chip" type="button" data-filter="automation">Automation</button>
+          <button class="filter-chip" type="button" data-filter="robotics">Robotics</button>
         </div>
+
         <div class="project-grid">
-          <article class="project-card visual-card reveal" data-category="ai">
-            <img src="assets/projects/golfball-station.jpg" alt="Golf ball quality control project slide" />
-            <div>
-              <span class="tag">AI Vision</span>
-              <h3>Automated Golf Ball Quality Control</h3>
-              <p>Engineered an automated station using Raspberry Pi 5, sensor triggering, camera input, and a Vision Transformer model for real-time classification.</p>
-            </div>
+          <article class="project-card reveal tilt-card featured-project" data-category="robotics">
+            <img class="project-image" src="assets/projects/internship-overview.jpg" alt="Internship project overview slide" />
+            <div class="project-orb"></div>
+            <span class="tag">Robotics + AI</span>
+            <h3>Hospital Logistics AGV Vision System</h3>
+            <p>Developed the vision subsystem using Jetson Orin Nano, ZED 2i camera, YOLOv8, Roboflow datasets, OpenCV, PyTorch, ONNX Runtime GPU, and PyQt5.</p>
+            <div class="project-meta"><span>Jetson</span><span>YOLOv8</span><span>ZED 2i</span></div>
           </article>
-          <article class="project-card visual-card reveal" data-category="ai">
-            <img src="assets/projects/fabric-detection.jpg" alt="Fabric object detection prediction output" />
-            <div>
-              <span class="tag">AI Vision</span>
-              <h3>Fabric Quality Control Systems</h3>
-              <p>Created machine vision applications for fabric classification and object detection, deployed across PC and Raspberry Pi platforms.</p>
-            </div>
+
+          <article class="project-card reveal tilt-card" data-category="ai">
+            <img class="project-image" src="assets/projects/golfball-station.jpg" alt="Automated golf ball quality control project slide" />
+            <span class="tag">AI Vision</span>
+            <h3>Automated Golf Ball Quality Control</h3>
+            <p>Engineered an automated station using Raspberry Pi 5, sensor triggering, camera input, and a Vision Transformer model for real-time classification.</p>
+            <div class="project-meta"><span>Raspberry Pi 5</span><span>ViT</span><span>Sensor trigger</span></div>
           </article>
-          <article class="project-card visual-card reveal" data-category="ai">
-            <img src="assets/projects/wood-segmentation.jpg" alt="Wood defect segmentation prediction output" />
-            <div>
-              <span class="tag">AI Vision</span>
-              <h3>Wood Defect Segmentation</h3>
-              <p>Built an instance segmentation application to outline scratches and holes on wood surfaces and support quality scoring.</p>
-            </div>
+
+          <article class="project-card reveal tilt-card" data-category="ai">
+            <img class="project-image" src="assets/projects/wood-segmentation.jpg" alt="Wood defect segmentation prediction output" />
+            <span class="tag">AI Vision</span>
+            <h3>PCB Component Inspection System</h3>
+            <p>Developed an intelligent verification system using detection and segmentation to locate present components and logically deduce missing ones.</p>
+            <div class="project-meta"><span>Detection</span><span>Segmentation</span><span>Logic</span></div>
           </article>
-          <article class="project-card visual-card reveal" data-category="ai">
-            <img src="assets/projects/ai-training-metrics.jpg" alt="AI model training metrics graph" />
-            <div>
-              <span class="tag">AI Vision</span>
-              <h3>AI Model Training and Validation</h3>
-              <p>Trained and evaluated machine vision models using dataset preparation, augmentation, performance metrics, and deployment planning.</p>
-            </div>
+
+          <article class="project-card reveal tilt-card" data-category="ai">
+            <img class="project-image" src="assets/projects/fabric-detection.jpg" alt="Fabric object detection prediction output" />
+            <span class="tag">AI Vision</span>
+            <h3>Wood Defect Segmentation</h3>
+            <p>Built an instance segmentation application to outline scratches and holes on wood surfaces and support quality scoring.</p>
+            <div class="project-meta"><span>Instance segmentation</span><span>Defects</span><span>Quality score</span></div>
           </article>
-          <article class="project-card reveal" data-category="power">
+
+          <article class="project-card reveal tilt-card" data-category="ai">
+            <span class="tag">AI Vision</span>
+            <h3>Fabric Quality Control Systems</h3>
+            <p>Created machine vision applications for fabric classification and object detection, deployed across PC and Raspberry Pi platforms.</p>
+            <div class="project-meta"><span>Classification</span><span>Detection</span><span>Raspberry Pi</span></div>
+          </article>
+
+          <article class="project-card reveal tilt-card" data-category="power">
             <span class="tag">Power</span>
             <h3>Overcurrent Relay Coordination GUI</h3>
             <p>Developed a MATLAB App Designer tool for IDMT relay coordination, operating time calculation, TCC curves, system analysis, and validation reports.</p>
+            <div class="project-meta"><span>MATLAB App</span><span>IDMT</span><span>TCC</span></div>
           </article>
-          <article class="project-card reveal" data-category="power">
+
+          <article class="project-card reveal tilt-card" data-category="power">
             <span class="tag">Power</span>
             <h3>Power Flow Analysis Using MATLAB and PowerWorld</h3>
-            <p>Built and analysed a 10-bus system using Newton-Raphson, Gauss-Seidel, and Fast Decoupled methods, then studied voltage, flow, and loss effects.</p>
+            <p>Built and analysed a 10-bus system using Newton-Raphson, Gauss-Seidel, and Fast Decoupled methods, then studied voltage, flow, and losses.</p>
+            <div class="project-meta"><span>PowerWorld</span><span>MATLAB</span><span>10-bus</span></div>
           </article>
-          <article class="project-card reveal" data-category="automation">
+
+          <article class="project-card reveal tilt-card" data-category="automation">
             <span class="tag">Automation</span>
             <h3>Automated Bus Door Control</h3>
             <p>Developed a PLC and pneumatic circuit control system for bus doors, applying automation logic to a practical control task.</p>
+            <div class="project-meta"><span>PLC</span><span>Pneumatics</span><span>Control</span></div>
           </article>
-          <article class="project-card reveal" data-category="automation">
-            <span class="tag">Automation</span>
-            <h3>Hospital Logistics AGV Vision System</h3>
-            <p>Developed the vision subsystem using Jetson Orin Nano, ZED 2i camera, YOLOv8, Roboflow datasets, OpenCV, PyTorch, ONNX Runtime GPU, and PyQt5.</p>
+
+          <article class="project-card reveal tilt-card" data-category="power">
+            <span class="tag">Power</span>
+            <h3>Off-Grid Wind Energy System</h3>
+            <p>Designed a Simulink-based off-grid wind energy system to provide power for DC and AC applications.</p>
+            <div class="project-meta"><span>Simulink</span><span>Renewable</span><span>AC/DC</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section swot-section" id="swot">
+        <div class="section-heading reveal">
+          <p class="eyebrow">E-Portfolio SWOT</p>
+          <h2>Personal engineering development analysis.</h2>
+          <p>This SWOT connects my CV, project experience, internship work, and professional development reflection.</p>
+        </div>
+        <div class="swot-grid">
+          <article class="swot-card strength reveal tilt-card">
+            <span>S</span>
+            <h3>Strengths</h3>
+            <p>I have practical project experience in computer vision, AI, embedded systems, PLC automation, power systems, relay protection, and GUI development.</p>
+          </article>
+          <article class="swot-card weakness reveal tilt-card">
+            <span>W</span>
+            <h3>Weaknesses</h3>
+            <p>I can still improve how I break down complex engineering problems and compare possible methods before selecting the final solution.</p>
+          </article>
+          <article class="swot-card opportunity reveal tilt-card">
+            <span>O</span>
+            <h3>Opportunities</h3>
+            <p>Final-year projects, AI vision certificates, protection studies, PLC exposure, simulation learning, and portfolio development can improve my career profile.</p>
+          </article>
+          <article class="swot-card threat reveal tilt-card">
+            <span>T</span>
+            <h3>Threats</h3>
+            <p>AI, automation, embedded systems, and power technologies change quickly, so I need to keep learning and manage my time well.</p>
           </article>
         </div>
       </section>
@@ -270,12 +353,12 @@
           <h2>Academic background.</h2>
         </div>
         <div class="education-list">
-          <article class="reveal">
+          <article class="reveal tilt-card">
             <h3>Asia Pacific University of Technology & Innovation</h3>
             <p>Bachelor of Electrical and Electronic Engineering with Honours</p>
             <span>2020 - Expected Graduation 2026</span>
           </article>
-          <article class="reveal">
+          <article class="reveal tilt-card">
             <h3>Sama American School</h3>
             <p>American High School Diploma</p>
             <span>2017 - 2019</span>
@@ -287,10 +370,7 @@
         <div class="section-heading reveal">
           <p class="eyebrow">Contact</p>
           <h2>Send me a message.</h2>
-          <p>
-            The form prepares an email using your own mail app, and the WhatsApp button opens a direct chat. This keeps the
-            site static while still making contact functional.
-          </p>
+          <p>The form prepares an email using your own mail app. The WhatsApp button opens a direct chat.</p>
         </div>
         <div class="contact-layout">
           <form class="contact-form reveal" id="contactForm">
@@ -308,13 +388,11 @@
             </label>
             <button class="button primary" type="submit">Send by Email</button>
           </form>
-          <aside class="contact-card reveal">
+          <aside class="contact-card reveal tilt-card">
             <h3>Direct contacts</h3>
             <a href="mailto:BadrBassam567@gmail.com">BadrBassam567@gmail.com</a>
             <a href="https://wa.me/60182352610" target="_blank" rel="noreferrer">WhatsApp: +60 18-235 2610</a>
-            <a href="https://www.linkedin.com/in/badr-albdulmajeed-b45437155/" target="_blank" rel="noreferrer">
-              LinkedIn Profile
-            </a>
+            <a href="https://www.linkedin.com/in/badr-albdulmajeed-b45437155/" target="_blank" rel="noreferrer">LinkedIn Profile</a>
             <a href="assets/Badr_Online_CV.docx" download>Download CV</a>
           </aside>
         </div>

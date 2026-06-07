@@ -8,34 +8,43 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
     <header class="topbar" aria-label="Primary navigation">
       <a class="brand" href="index.html#home" aria-label="Badr Albdulmajeed home">
         <span class="brand-mark">BA</span>
-        <span>Badr Albdulmajeed</span>
+        <span class="brand-text">Badr Albdulmajeed</span>
       </a>
-      <nav class="nav-links" aria-label="Page sections">
-        <a href="index.html#work">Work</a>
+      <nav class="nav-links" id="siteNav" aria-label="Page sections">
+        <a href="index.html#work">Experience</a>
         <a href="index.html#skills">Skills</a>
-        <a href="index.html#swot">SWOT</a>
         <a href="index.html#projects">Projects</a>
+        <a href="index.html#swot">SWOT</a>
         <a href="contact.html">Contact</a>
       </nav>
-      <button class="icon-button" id="themeToggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
-        <span aria-hidden="true">◐</span>
-      </button>
+      <div class="top-actions">
+        <button class="icon-button" id="themeToggle" type="button" aria-label="Toggle theme" title="Toggle theme">
+          <span aria-hidden="true">◐</span>
+        </button>
+        <button class="menu-button" id="menuToggle" type="button" aria-controls="siteNav" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </header>
 
     <main>
-      <section class="contact-page">
-        <div class="section-heading reveal">
+      <section class="contact-hero section-shell">
+        <div class="contact-intro reveal">
           <p class="eyebrow">Contact Page</p>
           <h1>Let’s connect about engineering, internship, or project opportunities.</h1>
           <p>
-            This page gives a direct way to reach me. The form prepares an email using your own mail app, while the
-            WhatsApp button opens a direct chat with my number.
+            Use the form to prepare an email from your own mail app. You can also reach me directly through WhatsApp,
+            email, or LinkedIn.
           </p>
         </div>
-        <div class="contact-layout">
+
+        <div class="contact-layout contact-page-layout">
           <form class="contact-form reveal" id="contactForm">
             <label>
               Your name
@@ -51,14 +60,25 @@
             </label>
             <button class="button primary" type="submit">Send by Email</button>
           </form>
-          <aside class="contact-card reveal">
+
+          <aside class="contact-card reveal tilt-card">
             <h2>Direct contacts</h2>
-            <a href="mailto:BadrBassam567@gmail.com">BadrBassam567@gmail.com</a>
-            <a href="https://wa.me/60182352610" target="_blank" rel="noreferrer">WhatsApp: +60 18-235 2610</a>
-            <a href="https://www.linkedin.com/in/badr-albdulmajeed-b45437155/" target="_blank" rel="noreferrer">
-              LinkedIn Profile
+            <button class="copy-card" id="copyEmail" type="button" data-copy="BadrBassam567@gmail.com">
+              <span>Email</span>
+              <strong>BadrBassam567@gmail.com</strong>
+            </button>
+            <a href="https://wa.me/60182352610" target="_blank" rel="noreferrer">
+              <span>WhatsApp</span>
+              <strong>+60 18-235 2610</strong>
             </a>
-            <a href="assets/Badr_Online_CV.docx" download>Download CV</a>
+            <a href="https://www.linkedin.com/in/badr-albdulmajeed-b45437155/" target="_blank" rel="noreferrer">
+              <span>LinkedIn</span>
+              <strong>Profile</strong>
+            </a>
+            <a href="assets/Badr_Online_CV.docx" download>
+              <span>Document</span>
+              <strong>Download CV</strong>
+            </a>
           </aside>
         </div>
       </section>
