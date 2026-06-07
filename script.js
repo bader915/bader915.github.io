@@ -44,11 +44,8 @@ const updateScrollProgress = () => {
 window.addEventListener("scroll", updateScrollProgress, { passive: true });
 updateScrollProgress();
 
-if (cursorGlow && window.matchMedia("(pointer: fine)").matches) {
-  window.addEventListener("pointermove", (event) => {
-    cursorGlow.style.left = `${event.clientX}px`;
-    cursorGlow.style.top = `${event.clientY}px`;
-  });
+if (cursorGlow) {
+  cursorGlow.hidden = true;
 }
 
 const revealObserver = new IntersectionObserver(
@@ -66,36 +63,9 @@ const revealObserver = new IntersectionObserver(
 document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
 
 const countElements = document.querySelectorAll("[data-count]");
-const countObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-
-      const element = entry.target;
-      const target = Number(element.dataset.count || 0);
-      const duration = 1100;
-      const start = performance.now();
-
-      const animate = (time) => {
-        const progress = Math.min((time - start) / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        element.textContent = Math.round(target * eased);
-
-        if (progress < 1) {
-          requestAnimationFrame(animate);
-        } else {
-          element.textContent = target;
-        }
-      };
-
-      requestAnimationFrame(animate);
-      countObserver.unobserve(element);
-    });
-  },
-  { threshold: 0.8 }
-);
-
-countElements.forEach((element) => countObserver.observe(element));
+countElements.forEach((element) => {
+  element.textContent = element.dataset.count || element.textContent;
+});
 
 const filterButtons = document.querySelectorAll(".filter-chip");
 const projectCards = document.querySelectorAll(".project-card");
@@ -113,10 +83,10 @@ filterButtons.forEach((button) => {
       if (shouldShow) {
         card.animate(
           [
-            { opacity: 0, transform: "translateY(14px) scale(0.98)" },
-            { opacity: 1, transform: "translateY(0) scale(1)" }
+            { opacity: 0, transform: "translateY(8px)" },
+            { opacity: 1, transform: "translateY(0)" }
           ],
-          { duration: 260, easing: "ease-out" }
+          { duration: 180, easing: "ease-out" }
         );
       }
     });
@@ -142,30 +112,13 @@ const activeSectionObserver = new IntersectionObserver(
 
 sections.forEach((section) => activeSectionObserver.observe(section));
 
-const canTilt = window.matchMedia("(pointer: fine)").matches && !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-if (canTilt) {
-  document.querySelectorAll(".tilt-card").forEach((card) => {
-    card.addEventListener("pointermove", (event) => {
-      const rect = card.getBoundingClientRect();
-      const x = event.clientX - rect.left;
-      const y = event.clientY - rect.top;
-      const rotateX = ((y / rect.height) - 0.5) * -5;
-      const rotateY = ((x / rect.width) - 0.5) * 5;
-      card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-3px)`;
-    });
-
-    card.addEventListener("pointerleave", () => {
-      card.style.transform = "";
-    });
-  });
-
+if (window.matchMedia("(pointer: fine)").matches && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
   document.querySelectorAll(".magnetic").forEach((button) => {
     button.addEventListener("pointermove", (event) => {
       const rect = button.getBoundingClientRect();
       const x = event.clientX - rect.left - rect.width / 2;
       const y = event.clientY - rect.top - rect.height / 2;
-      button.style.transform = `translate(${x * 0.08}px, ${y * 0.16}px)`;
+      button.style.transform = `translate(${x * 0.03}px, ${y * 0.05}px)`;
     });
 
     button.addEventListener("pointerleave", () => {

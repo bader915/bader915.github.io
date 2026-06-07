@@ -147,26 +147,11 @@ ul {
 }
 
 .cursor-glow {
-  position: fixed;
-  z-index: -1;
-  width: 380px;
-  height: 380px;
-  border-radius: 999px;
-  background: radial-gradient(circle, color-mix(in srgb, var(--blue) 18%, transparent), transparent 64%);
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  opacity: 0.8;
+  display: none;
 }
 
 .page-loader {
-  position: fixed;
-  inset: 0;
-  z-index: 90;
-  display: grid;
-  place-items: center;
-  background: var(--bg);
-  animation: loaderExit 900ms ease 900ms forwards;
-  pointer-events: none;
+  display: none;
 }
 
 .page-loader span {
@@ -445,7 +430,7 @@ main,
   background:
     radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--blue) 12%, transparent), transparent 42%),
     conic-gradient(from 60deg, transparent, color-mix(in srgb, var(--teal) 20%, transparent), transparent, color-mix(in srgb, var(--blue) 18%, transparent), transparent);
-  animation: slowRotate 18s linear infinite;
+  opacity: 0.78;
 }
 
 .circuit-board::before,
@@ -475,25 +460,24 @@ main,
   border-radius: 50%;
   background: var(--teal);
   box-shadow: 0 0 0 9px color-mix(in srgb, var(--teal) 12%, transparent), 0 0 28px var(--teal);
-  animation: nodePulse 2.2s ease-in-out infinite;
 }
 
 .node-a { top: 86px; left: 112px; }
-.node-b { top: 210px; right: 54px; animation-delay: 260ms; }
-.node-c { bottom: 120px; left: 60px; animation-delay: 520ms; }
-.node-d { right: 112px; bottom: 62px; animation-delay: 780ms; }
+.node-b { top: 210px; right: 54px; }
+.node-c { bottom: 120px; left: 60px; }
+.node-d { right: 112px; bottom: 62px; }
 
 .pulse-line {
   height: 2px;
   width: 130px;
   background: linear-gradient(90deg, transparent, var(--blue), transparent);
   transform-origin: left center;
-  animation: linePulse 2.6s ease-in-out infinite;
+  opacity: 0.72;
 }
 
 .line-a { top: 154px; left: 112px; transform: rotate(27deg); }
-.line-b { right: 66px; bottom: 188px; transform: rotate(-42deg); animation-delay: 420ms; }
-.line-c { bottom: 132px; left: 104px; transform: rotate(18deg); animation-delay: 840ms; }
+.line-b { right: 66px; bottom: 188px; transform: rotate(-42deg); }
+.line-c { bottom: 132px; left: 104px; transform: rotate(18deg); }
 
 .profile-card {
   position: absolute;
@@ -558,7 +542,6 @@ main,
   background: color-mix(in srgb, var(--surface-solid) 88%, transparent);
   box-shadow: var(--shadow);
   backdrop-filter: blur(14px);
-  animation: floatCard 4.2s ease-in-out infinite;
 }
 
 .floating-badge strong {
@@ -575,13 +558,11 @@ main,
 .badge-power {
   right: 0;
   bottom: 150px;
-  animation-delay: 600ms;
 }
 
 .badge-embedded {
   left: 24px;
   bottom: 38px;
-  animation-delay: 1200ms;
 }
 
 .ticker-section {
@@ -590,14 +571,16 @@ main,
   padding: 14px 0;
   border-block: 1px solid var(--line);
   background: color-mix(in srgb, var(--surface) 82%, transparent);
-  overflow: hidden;
+  overflow: visible;
 }
 
 .ticker-track {
   display: flex;
-  width: max-content;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
   gap: 12px;
-  animation: tickerMove 34s linear infinite;
 }
 
 .ticker-track span {
@@ -760,10 +743,11 @@ main,
 }
 
 .tilt-card {
-  transform-style: preserve-3d;
+  transform-style: flat;
 }
 
 .tilt-card:hover {
+  transform: translateY(-3px);
   border-color: color-mix(in srgb, var(--blue) 48%, var(--line));
   box-shadow: var(--shadow);
 }
@@ -830,15 +814,7 @@ main,
 }
 
 .project-orb {
-  position: absolute;
-  right: 24px;
-  top: 24px;
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  border: 1px solid color-mix(in srgb, var(--teal) 48%, transparent);
-  background: conic-gradient(from 20deg, transparent, color-mix(in srgb, var(--teal) 45%, transparent), transparent, color-mix(in srgb, var(--blue) 35%, transparent), transparent);
-  animation: slowRotate 8s linear infinite;
+  display: none;
 }
 
 .project-card h3,
