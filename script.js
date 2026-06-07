@@ -28,3 +28,32 @@ filterButtons.forEach((button) => {
     });
   });
 });
+
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.14 }
+);
+
+document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
+
+const contactForm = document.getElementById("contactForm");
+
+contactForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const name = document.getElementById("senderName").value.trim();
+  const email = document.getElementById("senderEmail").value.trim();
+  const message = document.getElementById("senderMessage").value.trim();
+
+  const subject = encodeURIComponent(`Portfolio contact from ${name}`);
+  const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+
+  window.location.href = `mailto:BadrBassam567@gmail.com?subject=${subject}&body=${body}`;
+});
