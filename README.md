@@ -1,19 +1,21 @@
 # Badr Albdulmajeed — Portfolio (bader915.github.io)
 
-Single-page, dark-themed portfolio for Badr Albdulmajeed (Electrical & Electronic Engineering).
+Single-page portfolio for Badr Albdulmajeed (Electrical & Electronic Engineering), built on the
+**DarkCV** Bootstrap template layout: a sticky left sidebar (photo, name, social links, Download CV)
+and a scrollable right column (About, Skills, Experience, Services, Portfolio, Contact).
 
-- **Layout model:** DarkCV-style sidebar (sticky on desktop, stacks on mobile at `991.98px`) with a hamburger top bar on small screens.
-- **Responsive:** fluid grids + breakpoints at 991.98px / 860px / 680px / 420px.
-- **Contact email on site:** bbhg.work@gmail.com
+- **Responsive:** Bootstrap 5 grid — the sidebar collapses into a stacked layout below `992px`.
+- **Contact email:** bbhg.work@gmail.com
 - **CV:** `assets/Badr_Albdulmajeed_CV.pdf` (keep in sync with the latest CV package).
 
 ## Structure
 
 ```
-index.html    # single-page site (About, Experience, Skills, Projects, Catalog, SWOT, Credentials, Contact)
-styles.css    # all styling + responsive breakpoints
-script.js     # mobile nav, skill-bar animation, project filter tabs
-assets/       # CV PDF, personal photo, project screenshots
+index.html              # single-page site
+css/bootstrap.min.css   # customized Bootstrap 5 (green #00B87B theme)
+css/style.css           # template overrides
+js/main.js              # typed effect, skill bars, portfolio filter, back-to-top (no dependencies)
+assets/                 # CV PDF, personal photo, project screenshots
 ```
 
 ## Preview locally
