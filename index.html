@@ -1,261 +1,624 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Badr Albdulmajeed | EEE Portfolio</title>
-  <meta name="description" content="Electrical and Electronic Engineering portfolio for Badr Albdulmajeed." />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'none'; style-src 'self'; script-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="Badr Albdulmajeed — Electrical & Electronic Engineer (B.Eng Hons, APU 2026) based in the UAE. Industrial automation, edge AI computer vision, and power systems. UAE Golden Visa holder, available immediately.">
+  <title>Badr Albdulmajeed | Electrical & Electronic Engineer</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2320262e'/%3E%3Cpath d='M17 4 8 18h6l-1 10 9-14h-6z' fill='%232ecc71'/%3E%3C/svg%3E">
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="index.html">Badr Albdulmajeed</a>
-    <button class="menu-button" aria-label="Toggle navigation" data-menu>Menu</button>
-    <nav class="nav" data-nav>
-      <a href="#profile">Profile</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#po-chart">PO Chart</a>
-      <a href="#swot">SWOT</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+
+  <!-- Mobile top bar -->
+  <header class="topbar">
+    <a class="topbar-brand" href="#top">Badr Albdulmajeed</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation menu">
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#builds">Featured Projects</a></li>
+      <li><a href="#catalog">Project Catalog</a></li>
+      <li><a href="#swot">SWOT</a></li>
+      <li><a href="#credentials">Credentials</a></li>
+      <li><a href="assets/Badr_Albdulmajeed_CV.pdf" target="_blank" rel="noopener noreferrer">Download CV</a></li>
+    </ul>
   </header>
 
-  <main>
-    <section class="hero" id="profile">
-      <div class="hero-copy">
-        <p class="eyebrow">Electrical and Electronic Engineering</p>
-        <h1>Practical EEE work across AI vision, power systems, automation, and embedded control.</h1>
-        <p class="lead">I am a final-year Electrical and Electronic Engineering student at Asia Pacific University. My work connects circuit design, power analysis, PLC automation, computer vision, embedded AI, and real-time GUI tools into practical engineering systems.</p>
-        <div class="actions">
-          <a class="button primary" href="assets/Badr_CV.pdf">Download CV</a>
-          <a class="button" href="contact.html">Contact Me</a>
+  <div class="layout" id="top">
+
+    <!-- ===================== SIDEBAR ===================== -->
+    <aside class="sidebar">
+      <div class="side-photo-wrap">
+        <img class="side-photo" src="assets/badr-photo.jpg" alt="Portrait of Badr Albdulmajeed" width="413" height="531">
+        <div class="side-id">
+          <p class="side-name">Badr<br>Albdulmajeed</p>
+          <p class="side-role">Electrical &amp; Electronic Engineer</p>
         </div>
       </div>
-      <div class="hero-panel">
-        <img src="assets/badr-photo.jpg" alt="Badr Albdulmajeed portrait" />
-        <div class="status-card">
-          <span>Current Focus</span>
-          <strong>Machine vision, power protection, embedded AI</strong>
+
+      <nav class="side-menu" aria-label="Sections">
+        <a href="#about">About Me</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#builds">Featured Projects</a>
+        <a href="#catalog">Project Catalog</a>
+        <a href="#swot">SWOT</a>
+        <a href="#credentials">Credentials</a>
+      </nav>
+
+      <div class="side-status">
+        <span class="led led-green" aria-hidden="true"></span>
+        <div>
+          <p class="side-status-title">UAE Golden Visa — Active</p>
+          <p class="side-status-sub">Available for immediate start</p>
         </div>
       </div>
-    </section>
 
-    <section class="metrics" aria-label="Portfolio highlights">
-      <div><strong>EEE</strong><span>Final-year student</span></div>
-      <div><strong>AI</strong><span>YOLOv8, ViT, OpenCV</span></div>
-      <div><strong>PLC</strong><span>Siemens S7 and TIA Portal</span></div>
-      <div><strong>Power</strong><span>Relay coordination and load flow</span></div>
-    </section>
+      <div class="side-actions">
+        <a class="btn btn-green" href="assets/Badr_Albdulmajeed_CV.pdf" target="_blank" rel="noopener noreferrer">Download CV</a>
+        <a class="btn btn-outline" href="#contact">Contact Me</a>
+      </div>
 
-    <section class="section" id="skills">
-      <div class="section-title">
-        <p class="eyebrow">Skill Areas</p>
-        <h2>Engineering tools I use to build and test systems.</h2>
-      </div>
-      <div class="skill-grid">
-        <article>
-          <h3>Computer Vision and AI</h3>
-          <p>OpenCV, Roboflow, YOLOv8, Vision Transformer, PyTorch, ONNX Runtime GPU, segmentation, detection, classification, dataset annotation and augmentation.</p>
-        </article>
-        <article>
-          <h3>Embedded and Automation</h3>
-          <p>Raspberry Pi 5, NVIDIA Jetson Orin Nano, ESP32, Arduino, sensors, ZED 2i, RGB-D sensing, LiDAR data integration, RFID access and GUI testing.</p>
-        </article>
-        <article>
-          <h3>Power Systems</h3>
-          <p>Power flow analysis, overcurrent relay coordination, IDMT relay settings, IEC and IEEE curves, TCC plotting, fault analysis and circuit breaker logic.</p>
-        </article>
-        <article>
-          <h3>Software and Simulation</h3>
-          <p>MATLAB, Simulink, App Designer, LabVIEW, PowerWorld, PyQt5, Streamlit, Python, C, C++, C#, SolidWorks, Dialux, LTspice and Tinkercad.</p>
-        </article>
-      </div>
-    </section>
+      <p class="side-foot">© <span id="yearNow">2026</span> · Dubai, UAE</p>
+    </aside>
 
-    <section class="section" id="projects">
-      <div class="section-title">
-        <p class="eyebrow">Selected Projects</p>
-        <h2>Projects from the CV, grouped around practical engineering output.</h2>
-      </div>
-      <div class="project-list">
-        <article class="project-card visual">
-          <span>01</span>
-          <img src="assets/projects/pcb-inspection-gui.jpg" alt="PCB inspection GUI showing component detection results" />
+    <!-- ===================== MAIN ===================== -->
+    <main class="main">
+
+      <!-- ABOUT ME -->
+      <section id="about" class="section" aria-labelledby="aboutTitle">
+        <h2 class="section-title" id="aboutTitle">About Me</h2>
+        <div class="about-grid">
           <div>
-            <h3>PCB Component Inspection GUI</h3>
-            <p>Created a computer vision system using object detection and segmentation to locate present PCB components and logically deduce missing ones while reducing false positives.</p>
-          </div>
-        </article>
-        <article class="project-card visual">
-          <span>02</span>
-          <img src="assets/projects/wood-segmentation-gui.jpg" alt="Wood surface segmentation GUI with defect mask output" />
-          <div>
-            <h3>Wood Surface Segmentation GUI</h3>
-            <p>Developed a GUI workflow for surface inspection where the image input, segmentation output and defect region can be reviewed clearly for quality-control checking.</p>
-          </div>
-        </article>
-        <article class="project-card visual">
-          <span>03</span>
-          <img src="assets/projects/fabric-detection-gui.jpg" alt="Fabric defect detection GUI with inspection output" />
-          <div>
-            <h3>Fabric Detection GUI</h3>
-            <p>Worked on a vision-based fabric inspection interface that presents detection results in a simple operator view, so the inspection result can be checked quickly.</p>
-          </div>
-        </article>
-        <article class="project-card visual">
-          <span>04</span>
-          <img src="assets/projects/fyp-pcb-detection-result.jpg" alt="FYP PCB detection result interface" />
-          <div>
-            <h3>FYP PCB Detection Result</h3>
-            <p>Built a detection result workflow where the output image, confidence result and detected PCB regions are shown together, which makes the model result easier to evaluate.</p>
-          </div>
-        </article>
-        <article class="project-card text-only"><span>05</span><h3>Hospital Logistics AGV Vision System</h3><p>Developed the vision subsystem using Jetson Orin Nano, ZED 2i stereo camera, YOLOv8, Roboflow, OpenCV, PyTorch and PyQt5 to detect obstacles and medicines in real time.</p></article>
-        <article class="project-card text-only"><span>06</span><h3>Overcurrent Relay Coordination GUI</h3><p>Built a MATLAB App Designer tool for IDMT relay coordination, operating time calculation, TCC curves, system analysis and validation reporting.</p></article>
-        <article class="project-card text-only"><span>07</span><h3>AC Microgrid Protection Simulation</h3><p>Built a 3-bus AC microgrid with transformer, CTs, circuit breakers and overcurrent relays to test IEC and IEEE inverse characteristics under different faults.</p></article>
-        <article class="project-card text-only"><span>08</span><h3>Automated Bus Door Control</h3><p>Developed a PLC and pneumatic control workflow for bus door automation using Siemens PLC exposure and automation logic.</p></article>
-      </div>
-    </section>
-
-    <section class="section split" id="experience">
-      <div>
-        <p class="eyebrow">Experience</p>
-        <h2>R&D project engineering exposure in machine vision and automation.</h2>
-      </div>
-      <div class="timeline">
-        <article>
-          <h3>R&D Project Engineer | Control easy</h3>
-          <p class="muted">March 2025 - July 2025</p>
-          <p>Developed machine vision systems for industrial quality control, including classification, object detection and segmentation. The work also included Raspberry Pi hardware integration, PLC workflow compatibility, technical manuals and GUI development.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section po-section" id="po-chart">
-      <div class="section-title">
-        <p class="eyebrow">Programme Outcomes</p>
-        <h2>PO radar chart based on my Y4S1 report card.</h2>
-      </div>
-      <div class="po-layout">
-        <article class="radar-card" aria-label="PO radar chart">
-          <svg class="radar-chart" viewBox="0 0 440 440" role="img" aria-labelledby="po-title po-desc">
-            <title id="po-title">Badr PO Radar Chart</title>
-            <desc id="po-desc">Radar chart showing PO1 to PO12 scores. The lowest point is PO8 at 0.50 and most outcomes are close to full score.</desc>
-            <g class="radar-rings">
-              <polygon points="220.0,183.8 238.1,188.6 251.4,201.9 256.2,220.0 251.4,238.1 238.1,251.4 220.0,256.2 201.9,251.4 188.6,238.1 183.8,220.0 188.6,201.9 201.9,188.6" />
-              <polygon points="220.0,147.5 256.2,157.2 282.8,183.8 292.5,220.0 282.8,256.2 256.2,282.8 220.0,292.5 183.8,282.8 157.2,256.2 147.5,220.0 157.2,183.8 183.7,157.2" />
-              <polygon points="220.0,111.2 274.4,125.8 314.2,165.6 328.8,220.0 314.2,274.4 274.4,314.2 220.0,328.8 165.6,314.2 125.8,274.4 111.2,220.0 125.8,165.6 165.6,125.8" />
-              <polygon points="220.0,75.0 292.5,94.4 345.6,147.5 365.0,220.0 345.6,292.5 292.5,345.6 220.0,365.0 147.5,345.6 94.4,292.5 75.0,220.0 94.4,147.5 147.5,94.4" />
-            </g>
-            <g class="radar-axis">
-              <line x1="220" y1="220" x2="220.0" y2="75.0" />
-              <line x1="220" y1="220" x2="292.5" y2="94.4" />
-              <line x1="220" y1="220" x2="345.6" y2="147.5" />
-              <line x1="220" y1="220" x2="365.0" y2="220.0" />
-              <line x1="220" y1="220" x2="345.6" y2="292.5" />
-              <line x1="220" y1="220" x2="292.5" y2="345.6" />
-              <line x1="220" y1="220" x2="220.0" y2="365.0" />
-              <line x1="220" y1="220" x2="147.5" y2="345.6" />
-              <line x1="220" y1="220" x2="94.4" y2="292.5" />
-              <line x1="220" y1="220" x2="75.0" y2="220.0" />
-              <line x1="220" y1="220" x2="94.4" y2="147.5" />
-              <line x1="220" y1="220" x2="147.5" y2="94.4" />
-            </g>
-            <polygon class="radar-area" points="220.0,75.0 268.6,135.9 345.6,147.5 336.0,220.0 324.2,280.2 292.5,345.6 220.0,365.0 183.8,282.8 125.8,274.4 75.0,220.0 94.4,147.5 147.5,94.4" />
-            <polyline class="radar-line" points="220.0,75.0 268.6,135.9 345.6,147.5 336.0,220.0 324.2,280.2 292.5,345.6 220.0,365.0 183.8,282.8 125.8,274.4 75.0,220.0 94.4,147.5 147.5,94.4 220.0,75.0" />
-            <g class="radar-dots">
-              <circle cx="220.0" cy="75.0" r="4"><title>PO1: 1.00</title></circle>
-              <circle cx="268.6" cy="135.9" r="4"><title>PO2: 0.67</title></circle>
-              <circle cx="345.6" cy="147.5" r="4"><title>PO3: 1.00</title></circle>
-              <circle cx="336.0" cy="220.0" r="4"><title>PO4: 0.80</title></circle>
-              <circle cx="324.2" cy="280.2" r="4"><title>PO5: 0.83</title></circle>
-              <circle cx="292.5" cy="345.6" r="4"><title>PO6: 1.00</title></circle>
-              <circle cx="220.0" cy="365.0" r="4"><title>PO7: 1.00</title></circle>
-              <circle cx="183.8" cy="282.8" r="4"><title>PO8: 0.50</title></circle>
-              <circle cx="125.8" cy="274.4" r="4"><title>PO9: 0.75</title></circle>
-              <circle cx="75.0" cy="220.0" r="4"><title>PO10: 1.00</title></circle>
-              <circle cx="94.4" cy="147.5" r="4"><title>PO11: 1.00</title></circle>
-              <circle cx="147.5" cy="94.4" r="4"><title>PO12: 1.00</title></circle>
-            </g>
-            <g class="radar-labels">
-              <text x="220.0" y="47.0" text-anchor="middle">PO1</text>
-              <text x="306.5" y="70.2" text-anchor="start">PO2</text>
-              <text x="369.8" y="133.5" text-anchor="start">PO3</text>
-              <text x="393.0" y="224.0" text-anchor="start">PO4</text>
-              <text x="369.8" y="310.5" text-anchor="start">PO5</text>
-              <text x="306.5" y="373.8" text-anchor="start">PO6</text>
-              <text x="220.0" y="406.0" text-anchor="middle">PO7</text>
-              <text x="133.5" y="373.8" text-anchor="end">PO8</text>
-              <text x="70.2" y="310.5" text-anchor="end">PO9</text>
-              <text x="47.0" y="224.0" text-anchor="end">PO10</text>
-              <text x="70.2" y="133.5" text-anchor="end">PO11</text>
-              <text x="133.5" y="70.2" text-anchor="end">PO12</text>
-            </g>
-          </svg>
-        </article>
-        <div class="po-panel">
-          <div class="po-summary">
-            <article><strong>0.88</strong><span>Average score</span></article>
-            <article><strong>7</strong><span>POs at full score</span></article>
-            <article><strong>PO8</strong><span>Main improvement area</span></article>
-          </div>
-          <div class="po-values" aria-label="PO values">
-            <span>PO1 <strong>1.00</strong></span>
-            <span>PO2 <strong>0.67</strong></span>
-            <span>PO3 <strong>1.00</strong></span>
-            <span>PO4 <strong>0.80</strong></span>
-            <span>PO5 <strong>0.83</strong></span>
-            <span>PO6 <strong>1.00</strong></span>
-            <span>PO7 <strong>1.00</strong></span>
-            <span>PO8 <strong>0.50</strong></span>
-            <span>PO9 <strong>0.75</strong></span>
-            <span>PO10 <strong>1.00</strong></span>
-            <span>PO11 <strong>1.00</strong></span>
-            <span>PO12 <strong>1.00</strong></span>
+            <p>
+              I am a fresh <strong>Electrical &amp; Electronic Engineering graduate with Honours</strong> from
+              Asia Pacific University of Technology &amp; Innovation (APU, 2026). During university and my
+              R&amp;D role at <strong>Control Easy</strong>, I worked across power systems, protection, PLCs,
+              sensors, embedded hardware, industrial automation and computer vision.
+            </p>
+            <p>
+              My final year project built a PCB defect-detection system around a self-supervised Vision
+              Transformer, reaching <strong>77.50% accuracy at 37.25 FPS</strong> after GPU optimisation.
+              I take care with details, communicate clearly, and learn new tools by testing them and
+              documenting what I find.
+            </p>
+            <div class="about-facts">
+              <div class="fact"><span class="fact-key">Degree</span><span class="fact-val">B.Eng (Hons) EEE · APU · 2026</span></div>
+              <div class="fact"><span class="fact-key">Location</span><span class="fact-val">United Arab Emirates</span></div>
+              <div class="fact"><span class="fact-key">Experience</span><span class="fact-val">R&amp;D Project Engineer · Control Easy</span></div>
+              <div class="fact"><span class="fact-key">Projects</span><span class="fact-val">29 documented builds</span></div>
+              <div class="fact"><span class="fact-key">Certifications</span><span class="fact-val">7 MathWorks · Sep 2026</span></div>
+              <div class="fact"><span class="fact-key">Availability</span><span class="fact-val fact-green">Immediate start</span></div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section swot-section" id="swot">
-      <div class="section-title">
-        <p class="eyebrow">SWOT Analysis</p>
-        <h2>Personal engineering development review.</h2>
-      </div>
-      <div class="swot-grid">
-        <article class="swot-card">
-          <span class="swot-letter">S</span>
-          <h3>Strengths</h3>
-          <p>I have practical project experience in computer vision, AI, embedded systems, PLC automation, power systems, relay protection and GUI development. My internship also improved my testing, troubleshooting, documentation and explaining of technical work.</p>
-        </article>
-        <article class="swot-card">
-          <span class="swot-letter">W</span>
-          <h3>Weaknesses</h3>
-          <p>I still need to improve my problem analysis before selecting a final solution. I also need to compare methods in more detail and reflect more clearly on teamwork, ethics and professional responsibility.</p>
-        </article>
-        <article class="swot-card">
-          <span class="swot-letter">O</span>
-          <h3>Opportunities</h3>
-          <p>My final-year projects, AI and machine vision work, PLC exposure, power protection learning, simulation tools and portfolio development can help me build a stronger engineering profile for graduate roles.</p>
-        </article>
-        <article class="swot-card">
-          <span class="swot-letter">T</span>
-          <h3>Threats</h3>
-          <p>AI, automation, embedded systems and power technologies are changing very fast. Time management is also a pressure because university work, project work and personal portfolio development all need consistent effort.</p>
-        </article>
-      </div>
-    </section>
-  </main>
+      <!-- EXPERIENCE -->
+      <section id="experience" class="section" aria-labelledby="expTitle">
+        <h2 class="section-title" id="expTitle">Experience</h2>
+        <div class="timeline">
+          <article class="tl-item">
+            <p class="tl-when">March 2025 — July 2025 · Seri Kembangan, Malaysia</p>
+            <h3>R&amp;D Project Engineer — Control Easy</h3>
+            <ul class="tl-list">
+              <li>Developed and tested machine-vision applications for industrial quality control using classification, object detection and segmentation.</li>
+              <li><strong>Automated inspection:</strong> built a golf-ball QC station on Raspberry Pi 5 — camera, 24 V proximity sensor and a Vision Transformer model for real-time classification and sorting.</li>
+              <li><strong>Hardware interfacing:</strong> connected 24 V industrial sensing to 3.3 V Pi GPIO through optical and relay isolation, and tested the complete hardware–software loop.</li>
+              <li><strong>PLC integration:</strong> integrated vision systems with PLC-controlled Industry 4.0 equipment; hands-on Siemens S7-1200 / S7-300 / S7-200 programming in SCL via TIA Portal.</li>
+              <li><strong>Documentation:</strong> prepared manuals covering dataset creation, model training, GUI deployment, hardware setup and electrical wiring.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
 
-  <footer>
-    <p>Badr Albdulmajeed</p>
-    <div>
-      <a href="mailto:BadrBassam567@gmail.com">Email</a>
-      <a href="https://wa.me/60182352610">WhatsApp</a>
-    </div>
+      <!-- SKILLS -->
+      <section id="skills" class="section" aria-labelledby="skillsTitle">
+        <h2 class="section-title" id="skillsTitle">Skills</h2>
+        <div class="bars-grid">
+          <div class="bar-item">
+            <div class="bar-head"><span>Computer Vision &amp; AI</span><span class="bar-pct">90%</span></div>
+            <div class="bar-track"><span class="bar-fill bar-green" data-w="90"></span></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-head"><span>Embedded &amp; Edge Hardware</span><span class="bar-pct">88%</span></div>
+            <div class="bar-track"><span class="bar-fill bar-green" data-w="88"></span></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-head"><span>MATLAB / Simulink</span><span class="bar-pct">92%</span></div>
+            <div class="bar-track"><span class="bar-fill bar-green" data-w="92"></span></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-head"><span>Power Systems &amp; Protection</span><span class="bar-pct">85%</span></div>
+            <div class="bar-track"><span class="bar-fill bar-green" data-w="85"></span></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-head"><span>PLC &amp; Industrial Automation</span><span class="bar-pct">82%</span></div>
+            <div class="bar-track"><span class="bar-fill bar-green" data-w="82"></span></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-head"><span>Programming (Python · C/C++ · C#)</span><span class="bar-pct">86%</span></div>
+            <div class="bar-track"><span class="bar-fill bar-green" data-w="86"></span></div>
+          </div>
+        </div>
+        <div class="skill-tags">
+          <span class="tag">Raspberry Pi 5</span>
+          <span class="tag">Jetson Orin Nano</span>
+          <span class="tag">Arduino</span>
+          <span class="tag">ESP32</span>
+          <span class="tag">OpenCV</span>
+          <span class="tag">PyTorch</span>
+          <span class="tag">Vision Transformers</span>
+          <span class="tag">YOLOv8</span>
+          <span class="tag">DINOv2</span>
+          <span class="tag">RF-DETR</span>
+          <span class="tag">ONNX Runtime GPU</span>
+          <span class="tag">Roboflow</span>
+          <span class="tag">Siemens S7-1200/300/200</span>
+          <span class="tag">TIA Portal</span>
+          <span class="tag">SCL</span>
+          <span class="tag">Relay Logic</span>
+          <span class="tag">Pneumatics</span>
+          <span class="tag">Load Flow Analysis</span>
+          <span class="tag">IDMT Relays</span>
+          <span class="tag">Microgrid Protection</span>
+          <span class="tag">PowerWorld</span>
+          <span class="tag">SolidWorks</span>
+          <span class="tag">LabVIEW</span>
+          <span class="tag">DIALux</span>
+          <span class="tag">LTspice</span>
+          <span class="tag">TinkerCAD</span>
+          <span class="tag">ROS2</span>
+          <span class="tag">MATLAB App Designer</span>
+        </div>
+      </section>
+
+      <!-- FEATURED PROJECTS -->
+      <section id="builds" class="section" aria-labelledby="buildsTitle">
+        <h2 class="section-title" id="buildsTitle">Featured Projects</h2>
+        <div class="builds-grid">
+
+          <article class="build-card build-flag">
+            <figure class="build-shot">
+              <img src="assets/projects/fyp-pcb-detection-result.jpg" alt="PCB defect detection result interface showing detected regions and confidence scores" loading="lazy" width="1066" height="599">
+            </figure>
+            <div class="build-head">
+              <h3>Self-Supervised Vision Transformer — PCB Defect Detection</h3>
+              <span class="build-tag">Final Year Project</span>
+            </div>
+            <p>Full PCB inspection pipeline: self-supervised SimCLR pretraining, MaxViT-Small backbone, RF-DETR and DINOv2 heads, exported to ONNX Runtime CUDA behind a Streamlit operator UI.</p>
+            <div class="metric-row">
+              <div class="metric"><strong class="m-green">77.50%</strong><span>Test accuracy</span></div>
+              <div class="metric"><strong class="m-green">0.8281</strong><span>Weighted F1 · 22 classes</span></div>
+              <div class="metric"><strong class="m-blue">68.83%</strong><span>mAP@50</span></div>
+              <div class="metric"><strong class="m-copper">37.25</strong><span>FPS · GPU optimised</span></div>
+            </div>
+          </article>
+
+          <article class="build-card">
+            <div class="build-head">
+              <h3>Hospital Logistics AGV — Vision Subsystem</h3>
+              <span class="build-tag">Team Project</span>
+            </div>
+            <p>Perception stack for an autonomous hospital logistics robot: stereo ZED 2i on Jetson Orin Nano, YOLOv8 detector served through ONNX Runtime GPU, ROS2 nodes and a PyQt5 monitoring console.</p>
+            <div class="metric-row">
+              <div class="metric"><strong class="m-green">98.99%</strong><span>mAP@50</span></div>
+              <div class="metric"><strong class="m-green">98.66%</strong><span>Precision</span></div>
+              <div class="metric"><strong class="m-green">97.85%</strong><span>Recall</span></div>
+            </div>
+          </article>
+
+          <article class="build-card">
+            <div class="build-head">
+              <h3>Overcurrent Relay Coordination Tool</h3>
+              <span class="build-tag">Power Systems</span>
+            </div>
+            <p>MATLAB App Designer tool for IDMT relay coordination: operating-time calculation, Time–Current Characteristic curves, system analysis and validation reporting across a ten-relay network.</p>
+            <div class="metric-row">
+              <div class="metric"><strong class="m-green">10</strong><span>Relays coordinated</span></div>
+              <div class="metric"><strong class="m-copper">≤ 1.00%</strong><span>Max calculation error</span></div>
+            </div>
+          </article>
+
+          <article class="build-card">
+            <div class="build-head">
+              <h3>10-Bus Power Flow Analysis</h3>
+              <span class="build-tag">Power Systems</span>
+            </div>
+            <p>Built and analysed a 10-bus network with Newton-Raphson, Gauss-Seidel and Fast Decoupled solvers; benchmarked bus voltages, line flows, generation and system losses under additional loading.</p>
+            <div class="metric-row">
+              <div class="metric"><strong class="m-blue">3</strong><span>Solvers compared</span></div>
+              <div class="metric"><strong class="m-blue">10</strong><span>Bus network</span></div>
+            </div>
+          </article>
+
+          <article class="build-card">
+            <div class="build-head">
+              <h3>AC Microgrid Overcurrent Protection</h3>
+              <span class="build-tag">Power Systems</span>
+            </div>
+            <p>3-bus AC microgrid modelled in Simulink — transformers, distribution lines, CTs, breakers and overcurrent relays — stress-tested with IEC and IEEE inverse characteristics across multiple fault types.</p>
+            <div class="metric-row">
+              <div class="metric"><strong class="m-blue">3</strong><span>Bus microgrid</span></div>
+              <div class="metric"><strong class="m-green">IEC + IEEE</strong><span>Relay curves tested</span></div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- PROJECT CATALOG -->
+      <section id="catalog" class="section" aria-labelledby="catalogTitle">
+        <h2 class="section-title" id="catalogTitle">Project Catalog <span class="sec-note">24 additional builds</span></h2>
+
+        <div class="filter-tabs" role="tablist" aria-label="Project category filter">
+          <button class="ftab is-active" type="button" data-filter="all" role="tab" aria-selected="true">All <span class="ftab-count">24</span></button>
+          <button class="ftab" type="button" data-filter="vision" role="tab" aria-selected="false">Vision &amp; AI <span class="ftab-count">7</span></button>
+          <button class="ftab" type="button" data-filter="power" role="tab" aria-selected="false">Power &amp; Grid <span class="ftab-count">8</span></button>
+          <button class="ftab" type="button" data-filter="embedded" role="tab" aria-selected="false">Embedded &amp; Robotics <span class="ftab-count">2</span></button>
+          <button class="ftab" type="button" data-filter="automation" role="tab" aria-selected="false">Industrial Automation <span class="ftab-count">3</span></button>
+          <button class="ftab" type="button" data-filter="software" role="tab" aria-selected="false">Software &amp; Design <span class="ftab-count">4</span></button>
+        </div>
+
+        <div class="catalog-grid" id="catalogGrid">
+
+          <article class="cat-card" data-cat="vision">
+            <span class="cat-chip">Vision &amp; AI</span>
+            <h3>Medication Scanner &amp; Obstacle Detection GUI</h3>
+            <p>Python GUI on Jetson for medication image scanning and obstacle detection.</p>
+            <span class="cat-stack">Python · Jetson</span>
+          </article>
+          <article class="cat-card cat-has-img" data-cat="vision">
+            <span class="cat-chip">Vision &amp; AI</span>
+            <figure class="cat-shot">
+              <img src="assets/projects/pcb-inspection-gui.jpg" alt="PCB inspection GUI showing component detection results" loading="lazy" width="1600" height="845">
+            </figure>
+            <h3>PCB Component Inspection System</h3>
+            <p>OpenCV and AI-based image processing to inspect PCB components and flag visual defects, with an operator GUI for reviewing detections.</p>
+            <span class="cat-stack">OpenCV · AI</span>
+          </article>
+          <article class="cat-card cat-has-img" data-cat="vision">
+            <span class="cat-chip">Vision &amp; AI</span>
+            <figure class="cat-shot">
+              <img src="assets/projects/wood-segmentation-gui.jpg" alt="Wood surface segmentation GUI with defect mask output" loading="lazy" width="1599" height="948">
+            </figure>
+            <h3>Wood Defect Segmentation System</h3>
+            <p>Computer-vision segmentation to locate and classify visible defects in wood samples, reviewed through a segmentation GUI.</p>
+            <span class="cat-stack">Computer Vision</span>
+          </article>
+          <article class="cat-card cat-has-img" data-cat="vision">
+            <span class="cat-chip">Vision &amp; AI</span>
+            <figure class="cat-shot">
+              <img src="assets/projects/fabric-detection-gui.jpg" alt="Fabric defect detection GUI with inspection output" loading="lazy" width="845" height="603">
+            </figure>
+            <h3>Fabric Quality Control System</h3>
+            <p>Computer-vision workflow to inspect fabric images and identify quality issues in a simple operator view.</p>
+            <span class="cat-stack">Computer Vision</span>
+          </article>
+          <article class="cat-card" data-cat="vision">
+            <span class="cat-chip">Vision &amp; AI</span>
+            <h3>Automated Golf Ball Quality Control</h3>
+            <p>Raspberry Pi inspection rig using camera input and a Vision Transformer to classify golf balls.</p>
+            <span class="cat-stack">Raspberry Pi · Vision Transformer</span>
+          </article>
+          <article class="cat-card" data-cat="vision">
+            <span class="cat-chip">Vision &amp; AI</span>
+            <h3>AI Hand Gesture Recognition</h3>
+            <p>Python and OpenCV system recognising hand gestures from live camera input.</p>
+            <span class="cat-stack">Python · OpenCV</span>
+          </article>
+          <article class="cat-card" data-cat="vision">
+            <span class="cat-chip">Vision &amp; AI</span>
+            <h3>Vision-Based Fruit Inspection System</h3>
+            <p>Python, OpenCV and Roboflow pipeline inspecting fruit images for visual quality classification.</p>
+            <span class="cat-stack">Python · OpenCV · Roboflow</span>
+          </article>
+
+          <article class="cat-card" data-cat="power">
+            <span class="cat-chip">Power &amp; Grid</span>
+            <h3>Modular Smart Power Hub — Honeycomb System</h3>
+            <p>Modular power-distribution hub designed in SolidWorks with a honeycomb-inspired structure.</p>
+            <span class="cat-stack">SolidWorks</span>
+          </article>
+          <article class="cat-card" data-cat="power">
+            <span class="cat-chip">Power &amp; Grid</span>
+            <h3>Single-Phase Transformer &amp; Three-Phase Alternator Simulation</h3>
+            <p>Simulated transformer and alternator behaviour; reviewed voltage and current characteristics.</p>
+            <span class="cat-stack">Simulation</span>
+          </article>
+          <article class="cat-card" data-cat="power">
+            <span class="cat-chip">Power &amp; Grid</span>
+            <h3>Microgrid Technology Simulation</h3>
+            <p>Simulated microgrid operating concepts across MATLAB and LabVIEW.</p>
+            <span class="cat-stack">MATLAB · LabVIEW</span>
+          </article>
+          <article class="cat-card" data-cat="power">
+            <span class="cat-chip">Power &amp; Grid</span>
+            <h3>Off-Grid Wind Energy System</h3>
+            <p>Modelled an off-grid wind energy system and reviewed its output in Simulink.</p>
+            <span class="cat-stack">Simulink</span>
+          </article>
+          <article class="cat-card" data-cat="power">
+            <span class="cat-chip">Power &amp; Grid</span>
+            <h3>Sound Purifier</h3>
+            <p>MATLAB signal-processing model to reduce unwanted sound components.</p>
+            <span class="cat-stack">MATLAB · DSP</span>
+          </article>
+          <article class="cat-card" data-cat="power">
+            <span class="cat-chip">Power &amp; Grid</span>
+            <h3>BJT Audio Amplifier</h3>
+            <p>Simulated and analysed a BJT amplifier for audio signal amplification in MATLAB.</p>
+            <span class="cat-stack">MATLAB · Analog</span>
+          </article>
+          <article class="cat-card" data-cat="power">
+            <span class="cat-chip">Power &amp; Grid</span>
+            <h3>Discrete-Time System using Z-Transform</h3>
+            <p>Analysed a discrete-time system using Z-transform methods and MATLAB calculations.</p>
+            <span class="cat-stack">MATLAB · DSP</span>
+          </article>
+          <article class="cat-card" data-cat="power">
+            <span class="cat-chip">Power &amp; Grid</span>
+            <h3>FM Modulation &amp; Demodulation</h3>
+            <p>LabVIEW model for FM signal generation, modulation and demodulation.</p>
+            <span class="cat-stack">LabVIEW · Comms</span>
+          </article>
+
+          <article class="cat-card" data-cat="embedded">
+            <span class="cat-chip">Embedded &amp; Robotics</span>
+            <h3>Automated Parking System</h3>
+            <p>Arduino-based parking system for vehicle detection and space control.</p>
+            <span class="cat-stack">Arduino</span>
+          </article>
+          <article class="cat-card" data-cat="embedded">
+            <span class="cat-chip">Embedded &amp; Robotics</span>
+            <h3>Temperature Control System</h3>
+            <p>Arduino and TinkerCAD model for temperature sensing and automatic control.</p>
+            <span class="cat-stack">Arduino · TinkerCAD</span>
+          </article>
+
+          <article class="cat-card" data-cat="automation">
+            <span class="cat-chip">Industrial Automation</span>
+            <h3>Automated Bus Door Control</h3>
+            <p>PLC and pneumatic control sequence for safe automated bus-door operation.</p>
+            <span class="cat-stack">PLC · Pneumatics</span>
+          </article>
+          <article class="cat-card" data-cat="automation">
+            <span class="cat-chip">Industrial Automation</span>
+            <h3>Automotive Part Control System</h3>
+            <p>C-based control system for handling and checking automotive parts.</p>
+            <span class="cat-stack">C Programming</span>
+          </article>
+          <article class="cat-card" data-cat="automation">
+            <span class="cat-chip">Industrial Automation</span>
+            <h3>Coffee Making Process</h3>
+            <p>LabVIEW process model for monitoring and controlling coffee preparation steps.</p>
+            <span class="cat-stack">LabVIEW</span>
+          </article>
+
+          <article class="cat-card" data-cat="software">
+            <span class="cat-chip">Software &amp; Design</span>
+            <h3>Vaccination Center System</h3>
+            <p>Python system organising vaccination-centre records and basic service flow.</p>
+            <span class="cat-stack">Python</span>
+          </article>
+          <article class="cat-card" data-cat="software">
+            <span class="cat-chip">Software &amp; Design</span>
+            <h3>Vaccination Inventory System</h3>
+            <p>C++ inventory system tracking vaccine stock, records and updates.</p>
+            <span class="cat-stack">C++</span>
+          </article>
+          <article class="cat-card" data-cat="software">
+            <span class="cat-chip">Software &amp; Design</span>
+            <h3>Library Lighting Design</h3>
+            <p>Library lighting levels and fixture layout planned using DIALux.</p>
+            <span class="cat-stack">DIALux</span>
+          </article>
+          <article class="cat-card" data-cat="software">
+            <span class="cat-chip">Software &amp; Design</span>
+            <h3>Go-Kart Design</h3>
+            <p>Go-kart assembly and mechanical components designed in SolidWorks.</p>
+            <span class="cat-stack">SolidWorks</span>
+          </article>
+
+        </div>
+        <p class="catalog-empty" id="catalogEmpty" hidden>No builds in this category.</p>
+      </section>
+
+      <!-- SWOT -->
+      <section id="swot" class="section" aria-labelledby="swotTitle">
+        <h2 class="section-title" id="swotTitle">SWOT Analysis <span class="sec-note">Professional development review</span></h2>
+        <div class="swot-grid">
+          <article class="swot-card swot-s">
+            <div class="swot-head">
+              <span class="swot-letter" aria-hidden="true">S</span>
+              <h3>Strengths</h3>
+            </div>
+            <p>Practical project experience across computer vision, AI, embedded systems, PLC automation, power systems, relay protection and GUI development. My R&amp;D internship strengthened testing, troubleshooting, documentation and the ability to explain technical work clearly.</p>
+          </article>
+          <article class="swot-card swot-w">
+            <div class="swot-head">
+              <span class="swot-letter" aria-hidden="true">W</span>
+              <h3>Weaknesses</h3>
+            </div>
+            <p>I am sharpening my problem analysis before committing to a final solution, comparing candidate methods in more depth, and reflecting more systematically on teamwork, ethics and professional responsibility.</p>
+          </article>
+          <article class="swot-card swot-o">
+            <div class="swot-head">
+              <span class="swot-letter" aria-hidden="true">O</span>
+              <h3>Opportunities</h3>
+            </div>
+            <p>My final-year project, AI and machine-vision work, PLC exposure, power-protection training and simulation tools form a strong foundation for graduate engineering roles — and the UAE market is investing heavily in automation and energy infrastructure.</p>
+          </article>
+          <article class="swot-card swot-t">
+            <div class="swot-head">
+              <span class="swot-letter" aria-hidden="true">T</span>
+              <h3>Threats</h3>
+            </div>
+            <p>AI, automation, embedded systems and power technologies are evolving quickly, demanding continuous learning. Time management remains a pressure point as professional development competes with project delivery.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- CREDENTIALS -->
+      <section id="credentials" class="section" aria-labelledby="credTitle">
+        <h2 class="section-title" id="credTitle">Credentials &amp; Academic Record</h2>
+        <div class="cred-grid">
+
+          <article class="panel">
+            <h3>Education</h3>
+            <div class="cred-item">
+              <p class="cred-name">B.Eng (Hons) Electrical &amp; Electronic Engineering</p>
+              <p class="cred-org">Asia Pacific University of Technology &amp; Innovation (APU)</p>
+              <p class="cred-meta">Completed 2026 · Fresh Graduate</p>
+            </div>
+            <div class="cred-item">
+              <p class="cred-name">American High School Diploma</p>
+              <p class="cred-org">Sama American School — Cairo, Egypt</p>
+              <p class="cred-meta">2017 — 2019</p>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h3>MathWorks Certifications — Sep 2026</h3>
+            <ul class="cert-list">
+              <li><span class="cert-name">MATLAB Onramp</span><span class="cert-date">01 Sep 2026</span></li>
+              <li><span class="cert-name">Simulink Onramp</span><span class="cert-date">03 Sep 2026</span></li>
+              <li><span class="cert-name">MATLAB Desktop Tools &amp; Troubleshooting Scripts</span><span class="cert-date">04 Sep 2026</span></li>
+              <li><span class="cert-name">Explore Data with MATLAB Plots</span><span class="cert-date">14 Sep 2026</span></li>
+              <li><span class="cert-name">Make and Manipulate Matrices</span><span class="cert-date">14 Sep 2026</span></li>
+              <li><span class="cert-name">Calculations with Vectors and Matrices</span><span class="cert-date">14 Sep 2026</span></li>
+              <li><span class="cert-name">Core MATLAB Skills Learning Path — all 4 courses</span><span class="cert-date">14 Sep 2026</span></li>
+            </ul>
+          </article>
+
+          <article class="panel po-card">
+            <h3>Programme Outcomes — APU</h3>
+            <p class="po-sub">Radar of PO1–PO12 attainment from my Y4S1 report card.</p>
+            <div class="po-layout">
+              <svg class="radar-chart" viewBox="0 0 440 440" role="img" aria-labelledby="poTitle poDesc">
+                <title id="poTitle">Programme Outcomes radar chart</title>
+                <desc id="poDesc">Radar chart showing PO1 to PO12 scores. The lowest point is PO8 at 0.50; most outcomes are close to full score.</desc>
+                <g class="radar-rings">
+                  <polygon points="220.0,183.8 238.1,188.6 251.4,201.9 256.2,220.0 251.4,238.1 238.1,251.4 220.0,256.2 201.9,251.4 188.6,238.1 183.8,220.0 188.6,201.9 201.9,188.6" />
+                  <polygon points="220.0,147.5 256.2,157.2 282.8,183.8 292.5,220.0 282.8,256.2 256.2,282.8 220.0,292.5 183.8,282.8 157.2,256.2 147.5,220.0 157.2,183.8 183.7,157.2" />
+                  <polygon points="220.0,111.2 274.4,125.8 314.2,165.6 328.8,220.0 314.2,274.4 274.4,314.2 220.0,328.8 165.6,314.2 125.8,274.4 111.2,220.0 125.8,165.6 165.6,125.8" />
+                  <polygon points="220.0,75.0 292.5,94.4 345.6,147.5 365.0,220.0 345.6,292.5 292.5,345.6 220.0,365.0 147.5,345.6 94.4,292.5 75.0,220.0 94.4,147.5 147.5,94.4" />
+                </g>
+                <g class="radar-axis">
+                  <line x1="220" y1="220" x2="220.0" y2="75.0" />
+                  <line x1="220" y1="220" x2="292.5" y2="94.4" />
+                  <line x1="220" y1="220" x2="345.6" y2="147.5" />
+                  <line x1="220" y1="220" x2="365.0" y2="220.0" />
+                  <line x1="220" y1="220" x2="345.6" y2="292.5" />
+                  <line x1="220" y1="220" x2="292.5" y2="345.6" />
+                  <line x1="220" y1="220" x2="220.0" y2="365.0" />
+                  <line x1="220" y1="220" x2="147.5" y2="345.6" />
+                  <line x1="220" y1="220" x2="94.4" y2="292.5" />
+                  <line x1="220" y1="220" x2="75.0" y2="220.0" />
+                  <line x1="220" y1="220" x2="94.4" y2="147.5" />
+                  <line x1="220" y1="220" x2="147.5" y2="94.4" />
+                </g>
+                <polygon class="radar-area" points="220.0,75.0 268.6,135.9 345.6,147.5 336.0,220.0 324.2,280.2 292.5,345.6 220.0,365.0 183.8,282.8 125.8,274.4 75.0,220.0 94.4,147.5 147.5,94.4" />
+                <g class="radar-dots">
+                  <circle cx="220.0" cy="75.0" r="4"><title>PO1: 1.00</title></circle>
+                  <circle cx="268.6" cy="135.9" r="4"><title>PO2: 0.67</title></circle>
+                  <circle cx="345.6" cy="147.5" r="4"><title>PO3: 1.00</title></circle>
+                  <circle cx="336.0" cy="220.0" r="4"><title>PO4: 0.80</title></circle>
+                  <circle cx="324.2" cy="280.2" r="4"><title>PO5: 0.83</title></circle>
+                  <circle cx="292.5" cy="345.6" r="4"><title>PO6: 1.00</title></circle>
+                  <circle cx="220.0" cy="365.0" r="4"><title>PO7: 1.00</title></circle>
+                  <circle cx="183.8" cy="282.8" r="4"><title>PO8: 0.50</title></circle>
+                  <circle cx="125.8" cy="274.4" r="4"><title>PO9: 0.75</title></circle>
+                  <circle cx="75.0" cy="220.0" r="4"><title>PO10: 1.00</title></circle>
+                  <circle cx="94.4" cy="147.5" r="4"><title>PO11: 1.00</title></circle>
+                  <circle cx="147.5" cy="94.4" r="4"><title>PO12: 1.00</title></circle>
+                </g>
+                <g class="radar-labels">
+                  <text x="220.0" y="47.0" text-anchor="middle">PO1</text>
+                  <text x="306.5" y="70.2" text-anchor="start">PO2</text>
+                  <text x="369.8" y="133.5" text-anchor="start">PO3</text>
+                  <text x="393.0" y="224.0" text-anchor="start">PO4</text>
+                  <text x="369.8" y="310.5" text-anchor="start">PO5</text>
+                  <text x="306.5" y="373.8" text-anchor="start">PO6</text>
+                  <text x="220.0" y="406.0" text-anchor="middle">PO7</text>
+                  <text x="133.5" y="373.8" text-anchor="end">PO8</text>
+                  <text x="70.2" y="310.5" text-anchor="end">PO9</text>
+                  <text x="47.0" y="224.0" text-anchor="end">PO10</text>
+                  <text x="70.2" y="133.5" text-anchor="end">PO11</text>
+                  <text x="133.5" y="70.2" text-anchor="end">PO12</text>
+                </g>
+              </svg>
+              <div class="po-side">
+                <div class="po-summary">
+                  <article><strong>0.88</strong><span>Average score</span></article>
+                  <article><strong>7</strong><span>POs at full score</span></article>
+                  <article><strong>PO8</strong><span>Improvement focus</span></article>
+                </div>
+                <ul class="po-values">
+                  <li>PO1 <strong>1.00</strong></li>
+                  <li>PO2 <strong>0.67</strong></li>
+                  <li>PO3 <strong>1.00</strong></li>
+                  <li>PO4 <strong>0.80</strong></li>
+                  <li>PO5 <strong>0.83</strong></li>
+                  <li>PO6 <strong>1.00</strong></li>
+                  <li>PO7 <strong>1.00</strong></li>
+                  <li>PO8 <strong>0.50</strong></li>
+                  <li>PO9 <strong>0.75</strong></li>
+                  <li>PO10 <strong>1.00</strong></li>
+                  <li>PO11 <strong>1.00</strong></li>
+                  <li>PO12 <strong>1.00</strong></li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="section" aria-labelledby="contactTitle">
+        <h2 class="section-title" id="contactTitle">Contact Me</h2>
+        <div class="contact-card">
+          <div class="contact-grid">
+            <a class="contact-tile" href="mailto:bbhg.work@gmail.com">
+              <span class="contact-icon" aria-hidden="true">✉</span>
+              <span class="contact-label">Email</span>
+              <span class="contact-value">bbhg.work@gmail.com</span>
+            </a>
+            <a class="contact-tile" href="tel:+971502859094">
+              <span class="contact-icon" aria-hidden="true">☎</span>
+              <span class="contact-label">Phone / WhatsApp</span>
+              <span class="contact-value">+971 50 285 9094</span>
+            </a>
+            <a class="contact-tile" href="https://www.linkedin.com/in/badr-albdulmajeed-b45437155/" target="_blank" rel="noopener noreferrer">
+              <span class="contact-icon" aria-hidden="true">in</span>
+              <span class="contact-label">LinkedIn</span>
+              <span class="contact-value">badr-albdulmajeed-b45437155</span>
+            </a>
+          </div>
+          <p class="contact-status">
+            <span class="led led-green" aria-hidden="true"></span>
+            Responds within 24 hours · GST (UTC+4) · UAE Golden Visa holder — available for immediate start
+          </p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <footer class="footer">
+    <p>© <span id="yearFooter">2026</span> Badr Albdulmajeed — Electrical &amp; Electronic Engineer · Dubai, UAE</p>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
