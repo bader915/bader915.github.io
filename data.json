@@ -78,23 +78,20 @@
     {
       "title": "PCB Component Inspection GUI",
       "category": "vision",
-      "image": "assets/projects/pcb-inspection-gui.jpg",
-      "imageAlt": "PCB component inspection GUI",
-      "badge": "Computer Vision"
+      "description": "AI-based image processing system to inspect PCB components and identify visual defects, including logic for detecting missing components.",
+      "tools": "OpenCV · Python · Computer Vision"
     },
     {
       "title": "Wood Defect Segmentation",
       "category": "vision",
-      "image": "assets/projects/wood-segmentation-gui.jpg",
-      "imageAlt": "Wood surface segmentation GUI",
-      "badge": "Computer Vision"
+      "description": "Pixel-level segmentation workflow to locate and classify visible defects in wood samples.",
+      "tools": "YOLOv8 · Python · Computer Vision"
     },
     {
       "title": "Fabric Quality Control",
       "category": "vision",
-      "image": "assets/projects/fabric-detection-gui.jpg",
-      "imageAlt": "Fabric defect detection GUI",
-      "badge": "Computer Vision"
+      "description": "Machine-vision workflow for fabric inspection, combining image classification and object detection to identify quality issues.",
+      "tools": "Python · TensorFlow · Computer Vision"
     },
     {
       "title": "Automated Bus Door Control",

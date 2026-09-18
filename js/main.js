@@ -166,7 +166,10 @@
     var bars = document.querySelectorAll('.progress[role="progressbar"]');
     function fill(track) {
       var inner = track.querySelector(".progress-bar");
-      if (inner) inner.style.width = track.getAttribute("aria-valuenow") + "%";
+      if (inner) {
+        inner.style.width = track.getAttribute("aria-valuenow") + "%";
+        setTimeout(function () { inner.classList.add("glow-active"); }, 2000);
+      }
     }
     if ("IntersectionObserver" in window) {
       var observer = new IntersectionObserver(function (entries) {
@@ -204,13 +207,8 @@
   }
 
   function initProjectReveal() {
-    var projects = document.querySelectorAll(".project-reveal");
+    var projects = document.querySelectorAll(".portfolio-item");
     if (!projects.length) return;
-
-    projects.forEach(function (project, index) {
-      project.style.setProperty("--project-delay", (index % 4) * 70 + "ms");
-      project.style.setProperty("--project-shift", index % 2 ? "42px" : "-42px");
-    });
 
     if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       projects.forEach(function (project) { project.classList.add("is-visible"); });
@@ -222,6 +220,10 @@
       return;
     }
 
+    projects.forEach(function (project, index) {
+      project.style.transitionDelay = index % 2 === 0 ? "0ms" : "150ms";
+    });
+
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
@@ -229,9 +231,108 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+    }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
 
     projects.forEach(function (project) { observer.observe(project); });
+  }
+
+  function initScrollReveals() {
+    var sidebar = document.querySelector(".sticky-lg-top > .d-flex");
+    if (sidebar) {
+      setTimeout(function () { sidebar.classList.add("sidebar-loaded"); }, 150);
+    }
+
+    var revealTargets = document.querySelectorAll(".service-item, .contact-tile, .timeline-marker");
+    if (!revealTargets.length) return;
+
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      revealTargets.forEach(function (target) { target.classList.add("is-revealed"); });
+      return;
+    }
+
+    if (!("IntersectionObserver" in window)) {
+      revealTargets.forEach(function (target) { target.classList.add("is-revealed"); });
+      return;
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-revealed");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: "-50px" });
+
+    revealTargets.forEach(function (target) { observer.observe(target); });
+  }
+
+  function initCircuitScroll() {
+    var portfolioSection = document.getElementById("portfolio");
+    var electron = document.getElementById("circuitElectron");
+    var wireContainer = document.querySelector(".circuit-wire-container");
+    var portfolioItems = document.querySelectorAll("#portfolio .portfolio-item");
+    if (!portfolioSection || !electron || !wireContainer || !portfolioItems.length) return;
+
+    var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var ticking = false;
+
+    function updateCircuit() {
+      var rect = portfolioSection.getBoundingClientRect();
+      var wireHeight = wireContainer.offsetHeight;
+      var scrollPercentage = (window.innerHeight / 2 - rect.top) / Math.max(portfolioSection.offsetHeight, 1);
+      scrollPercentage = Math.max(0, Math.min(1, scrollPercentage));
+
+      if (!reduceMotion) {
+        var travelDistance = Math.max(0, wireHeight - electron.offsetHeight);
+        electron.style.top = (scrollPercentage * travelDistance) + "px";
+        electron.style.transform = "none";
+      }
+
+      portfolioItems.forEach(function (item) {
+        var itemRect = item.getBoundingClientRect();
+        var itemCenter = itemRect.top + (itemRect.height / 2);
+        if (reduceMotion || itemCenter <= window.innerHeight / 2 + 50) {
+          item.classList.add("wire-revealed");
+        }
+      });
+      ticking = false;
+    }
+
+    function onScroll() {
+      if (!ticking) {
+        window.requestAnimationFrame(updateCircuit);
+        ticking = true;
+      }
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    updateCircuit();
+  }
+
+  function initSectionIndicator() {
+    var links = document.querySelectorAll(".section-indicator a[data-section]");
+    if (!links.length || !("IntersectionObserver" in window)) return;
+
+    var sections = [];
+    links.forEach(function (link) {
+      var section = document.getElementById(link.getAttribute("data-section"));
+      if (section) sections.push({ section: section, link: link });
+    });
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          sections.forEach(function (item) {
+            item.link.classList.toggle("is-active", item.section === entry.target);
+          });
+        }
+      });
+    }, { rootMargin: "-22% 0px -62% 0px", threshold: 0 });
+
+    sections.forEach(function (item) { observer.observe(item.section); });
+    if (sections[0]) sections[0].link.classList.add("is-active");
   }
 
   function renderPortfolio(data) {
@@ -247,6 +348,8 @@
     initBars();
     initFilters();
     initProjectReveal();
+    initScrollReveals();
+    initSectionIndicator();
   }
 
   var spinner = document.getElementById("spinner");
