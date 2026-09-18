@@ -317,6 +317,10 @@ body.data-load-error::after {
   overflow-wrap: anywhere;
 }
 
+.portfolio-item .bg-secondary {
+  overflow-wrap: anywhere;
+}
+
 /* Section heading annotation (e.g. project count) */
 .sec-note {
   font-size: 0.85rem;
@@ -338,10 +342,26 @@ body.data-load-error::after {
   }
 }
 
+@media (max-width: 900px) {
+  .back-to-top {
+    right: 16px;
+    bottom: 16px;
+  }
+}
+
 @media (max-width: 480px) {
   .contact-tile {
     align-items: flex-start;
     padding: 12px;
+  }
+
+  .back-to-top {
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .title {
+    font-size: 1.5rem;
   }
 }
 

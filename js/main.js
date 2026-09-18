@@ -1,65 +1,45 @@
 (function () {
   "use strict";
 
-  /* ---------- Spinner ---------- */
-  var spinner = document.getElementById("spinner");
-  if (spinner) {
-    window.addEventListener("load", function () {
-      setTimeout(function () { spinner.classList.remove("show"); }, 300);
-    });
-    // Fallback in case load already fired
-    setTimeout(function () { spinner.classList.remove("show"); }, 1200);
-  }
-
-  /* ---------- Helpers ---------- */
   function el(tag, className, text) {
     var node = document.createElement(tag);
     if (className) node.className = className;
-    if (text != null) node.textContent = text;
+    if (text !== undefined && text !== null) node.textContent = text;
     return node;
   }
 
-  /* ---------- Typed effect ---------- */
   function startTyped(strings) {
-    var typedOutput = document.querySelector(".typed-text-output");
-    if (!typedOutput) return;
+    var output = document.querySelector(".typed-text-output");
+    strings = Array.isArray(strings) ? strings.filter(Boolean) : [];
+    if (!output || !strings.length) return;
 
-    if (!strings.length) {
-      typedOutput.textContent = "";
-      return;
-    }
-
-    var si = 0, ci = 0, deleting = false;
+    var stringIndex = 0;
+    var characterIndex = 0;
+    var deleting = false;
     function tick() {
-      var current = strings[si];
-      if (!deleting) {
-        ci++;
-        typedOutput.textContent = current.slice(0, ci);
-        if (ci === current.length) {
-          deleting = true;
-          setTimeout(tick, 1600);
-          return;
-        }
-      } else {
-        ci--;
-        typedOutput.textContent = current.slice(0, ci);
-        if (ci === 0) {
-          deleting = false;
-          si = (si + 1) % strings.length;
-        }
+      var current = strings[stringIndex];
+      characterIndex += deleting ? -1 : 1;
+      output.textContent = current.slice(0, characterIndex);
+      if (!deleting && characterIndex === current.length) {
+        deleting = true;
+        setTimeout(tick, 1600);
+        return;
+      }
+      if (deleting && characterIndex === 0) {
+        deleting = false;
+        stringIndex = (stringIndex + 1) % strings.length;
       }
       setTimeout(tick, deleting ? 24 : 90);
     }
     tick();
   }
 
-  /* ---------- Renderers ---------- */
   function renderSkillBar(skill) {
     var wrap = el("div", "skill mb-4");
-    var head = el("div", "d-flex justify-content-between");
-    head.appendChild(el("p", "mb-2", skill.name));
-    head.appendChild(el("p", "mb-2", skill.level + "%"));
-    wrap.appendChild(head);
+    var heading = el("div", "d-flex justify-content-between");
+    heading.appendChild(el("p", "mb-2", skill.name));
+    heading.appendChild(el("p", "mb-2", String(skill.level) + "%"));
+    wrap.appendChild(heading);
 
     var track = el("div", "progress");
     track.setAttribute("role", "progressbar");
@@ -75,141 +55,118 @@
   function renderSkills(data) {
     var mount = document.getElementById("skillsMount");
     if (!mount) return;
-
-    var cols = [el("div", "col-sm-6"), el("div", "col-sm-6")];
-    data.skills.forEach(function (skill, i) {
-      cols[i < Math.ceil(data.skills.length / 2) ? 0 : 1].appendChild(renderSkillBar(skill));
+    var skills = Array.isArray(data.skills) ? data.skills.filter(function (skill) {
+      return skill && skill.name;
+    }) : [];
+    var columns = [el("div", "col-sm-6"), el("div", "col-sm-6")];
+    skills.forEach(function (skill, index) {
+      columns[index < Math.ceil(skills.length / 2) ? 0 : 1].appendChild(renderSkillBar(skill));
     });
-    mount.appendChild(cols[0]);
-    mount.appendChild(cols[1]);
+    columns.forEach(function (column) { mount.appendChild(column); });
 
-    var notesMount = document.getElementById("skillNotesMount");
-    if (notesMount) {
-      (data.skillNotes || []).forEach(function (note) {
-        notesMount.appendChild(el("p", "mb-2", note));
-      });
-    }
+    var notes = document.getElementById("skillNotesMount");
+    (Array.isArray(data.skillNotes) ? data.skillNotes : []).forEach(function (note) {
+      if (notes && note) notes.appendChild(el("p", "mb-2", note));
+    });
   }
 
-  function renderTimelineEntry(entry) {
+  function renderTimelineEntry(entry, isEducation) {
     var item = el("div", "position-relative mb-4");
     var marker = el("span", "timeline-marker bi bi-arrow-right fs-4 text-light position-absolute");
     marker.setAttribute("aria-hidden", "true");
     item.appendChild(marker);
-
-    item.appendChild(el("h5", "mb-1", entry.title));
+    item.appendChild(el("h5", "mb-1", isEducation ? entry.degree : entry.title));
 
     var meta = el("p", "mb-2");
-    var orgLine = entry.org;
-    if (entry.location) orgLine += ", " + entry.location;
-    meta.appendChild(document.createTextNode(orgLine + " | "));
-    var period = el("small", null, entry.period);
-    meta.appendChild(period);
+    var organization = isEducation ? entry.school : entry.org;
+    meta.appendChild(document.createTextNode((organization || "") + (organization ? " | " : "")));
+    meta.appendChild(el("small", null, entry.period || ""));
     item.appendChild(meta);
-
-    if (entry.description) {
-      item.appendChild(el("p", null, entry.description));
-    }
+    if (entry.description) item.appendChild(el("p", null, entry.description));
     return item;
   }
 
-  function renderTimeline(entries, mountId) {
+  function renderTimeline(entries, mountId, isEducation) {
     var mount = document.getElementById(mountId);
     if (!mount) return;
-    entries.forEach(function (entry) { mount.appendChild(renderTimelineEntry(entry)); });
+    (Array.isArray(entries) ? entries : []).forEach(function (entry) {
+      if (entry && (isEducation ? entry.degree : entry.title)) {
+        mount.appendChild(renderTimelineEntry(entry, isEducation));
+      }
+    });
   }
 
   function renderLanguages(languages) {
     var mount = document.getElementById("languagesMount");
-    if (!mount || !languages.length) return;
-
-    var label = el("span", "fw-medium text-primary", "Languages: ");
-    mount.appendChild(label);
-    mount.appendChild(document.createTextNode(
-      languages.map(function (l) { return l.name + " (" + l.level + ")"; }).join(" · ")
-    ));
+    if (!mount || !Array.isArray(languages)) return;
+    var validLanguages = languages.filter(function (language) {
+      return language && language.name && language.level;
+    });
+    if (!validLanguages.length) return;
+    mount.appendChild(el("span", "fw-medium text-primary", "Languages: "));
+    mount.appendChild(document.createTextNode(validLanguages.map(function (language) {
+      return language.name + " (" + language.level + ")";
+    }).join(" · ")));
   }
 
   function renderProject(project) {
     var mount = document.getElementById("portfolioMount");
-    if (!mount) return;
-
-    var col = el("div", "col-md-6 mb-4 portfolio-item " + project.category);
+    if (!mount || !project || !project.title) return;
+    var category = project.category || "software";
+    var column = el("div", "col-md-6 mb-4 portfolio-item " + category);
 
     if (project.image) {
       var frame = el("div", "position-relative overflow-hidden mb-2");
-      var img = el("img", "img-fluid w-100");
-      img.src = project.image;
-      img.alt = project.imageAlt || project.title;
-      img.loading = "lazy";
-      frame.appendChild(img);
-
+      var image = el("img", "img-fluid w-100");
+      image.src = project.image;
+      image.alt = project.imageAlt || project.title;
+      image.loading = "lazy";
+      frame.appendChild(image);
       var caption = el("div", "portfolio-caption");
       caption.appendChild(el("h5", null, project.title));
       if (project.badge) caption.appendChild(el("small", null, project.badge));
       frame.appendChild(caption);
-
-      col.appendChild(frame);
+      column.appendChild(frame);
     } else {
       var card = el("div", "bg-secondary p-4 h-100");
       card.appendChild(el("h5", "mb-2", project.title));
-      card.appendChild(el("p", "mb-0", project.description));
-      if (project.tools) card.appendChild(el("p", "mb-0", project.tools));
-      if (project.metrics) card.appendChild(el("p", "mb-0", project.metrics));
+      [project.description, project.tools, project.metrics].forEach(function (value) {
+        if (value) card.appendChild(el("p", "mb-0", value));
+      });
       if (project.stack) card.appendChild(el("p", "mb-0 small", project.stack));
-      col.appendChild(card);
+      column.appendChild(card);
     }
-    mount.appendChild(col);
+    mount.appendChild(column);
   }
 
   function renderCourse(course) {
     var mount = document.getElementById("certsMount");
-    if (!mount) return;
-
-    var col = el("div", "col-md-6");
+    if (!mount || !course || !course.name || !course.href) return;
+    var column = el("div", "col-md-6");
     var link = el("a", "contact-tile");
     link.href = course.href;
     link.target = "_blank";
     link.rel = "noopener";
-
+    link.setAttribute("aria-label", "Open " + course.name + " certificate PDF");
     var icon = el("span", "contact-icon");
-    var iconGlyph = el("i", "fa fa-file-pdf");
-    iconGlyph.setAttribute("aria-hidden", "true");
-    icon.appendChild(iconGlyph);
+    var glyph = el("i", "fa fa-file-pdf");
+    glyph.setAttribute("aria-hidden", "true");
+    icon.appendChild(glyph);
     link.appendChild(icon);
-
     var text = el("span");
-    text.appendChild(el("span", "contact-label", course.issuer + " · " + course.date + " · Click to open PDF"));
+    text.appendChild(el("span", "contact-label", (course.issuer || "") + " · " + (course.date || "") + " · Click to open PDF"));
     text.appendChild(el("span", "contact-value", course.name));
     link.appendChild(text);
-
-    col.appendChild(link);
-    mount.appendChild(col);
+    column.appendChild(link);
+    mount.appendChild(column);
   }
 
-  function renderPortfolio(data) {
-    startTyped(data.roles || []);
-    renderSkills(data);
-    renderTimeline(data.experience || [], "experienceMount");
-    renderTimeline(data.education || [], "educationMount");
-    renderLanguages(data.languages || []);
-    (data.selectedProjects || []).forEach(renderProject);
-    (data.otherProjects || []).forEach(renderProject);
-    (data.courses || []).forEach(renderCourse);
-    initBars();
-    initFilters();
-  }
-
-  /* ---------- Skill bars fill when scrolled into view ---------- */
   function initBars() {
     var bars = document.querySelectorAll('.progress[role="progressbar"]');
-    if (!bars.length) return;
-
-    function fill(p) {
-      var inner = p.querySelector(".progress-bar");
-      if (inner) inner.style.width = p.getAttribute("aria-valuenow") + "%";
+    function fill(track) {
+      var inner = track.querySelector(".progress-bar");
+      if (inner) inner.style.width = track.getAttribute("aria-valuenow") + "%";
     }
-
     if ("IntersectionObserver" in window) {
       var observer = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
@@ -219,45 +176,59 @@
           }
         });
       }, { threshold: 0.4 });
-      bars.forEach(function (b) { observer.observe(b); });
+      bars.forEach(function (bar) { observer.observe(bar); });
     } else {
       bars.forEach(fill);
     }
   }
 
-  /* ---------- Portfolio filter ---------- */
   function initFilters() {
     var filters = document.querySelectorAll("#portfolio-filters button");
     var items = document.querySelectorAll(".portfolio-item");
-    filters.forEach(function (f) {
-      f.addEventListener("click", function () {
-        filters.forEach(function (x) {
-          x.classList.remove("active");
-          x.setAttribute("aria-pressed", "false");
+    filters.forEach(function (filterButton) {
+      filterButton.addEventListener("click", function () {
+        filters.forEach(function (button) {
+          button.classList.remove("active");
+          button.setAttribute("aria-pressed", "false");
         });
-        f.classList.add("active");
-        f.setAttribute("aria-pressed", "true");
-
-        var filter = f.getAttribute("data-filter") || "*";
+        filterButton.classList.add("active");
+        filterButton.setAttribute("aria-pressed", "true");
+        var filter = filterButton.getAttribute("data-filter") || "*";
         var className = filter.charAt(0) === "." ? filter.slice(1) : filter;
-
         items.forEach(function (item) {
-          var show = filter === "*" || item.classList.contains(className);
-          item.style.display = show ? "" : "none";
+          item.style.display = filter === "*" || item.classList.contains(className) ? "" : "none";
         });
       });
     });
   }
 
-  /* ---------- Data loading ---------- */
+  function renderPortfolio(data) {
+    data = data && typeof data === "object" ? data : {};
+    startTyped(data.roles);
+    renderSkills(data);
+    renderTimeline(data.experience, "experienceMount", false);
+    renderTimeline(data.education, "educationMount", true);
+    renderLanguages(data.languages);
+    (Array.isArray(data.selectedProjects) ? data.selectedProjects : []).forEach(renderProject);
+    (Array.isArray(data.otherProjects) ? data.otherProjects : []).forEach(renderProject);
+    (Array.isArray(data.courses) ? data.courses : []).forEach(renderCourse);
+    initBars();
+    initFilters();
+  }
+
+  var spinner = document.getElementById("spinner");
+  if (spinner) {
+    window.addEventListener("load", function () { setTimeout(function () { spinner.classList.remove("show"); }, 300); });
+    setTimeout(function () { spinner.classList.remove("show"); }, 1200);
+  }
+
   fetch("data.json", { cache: "no-store" })
     .then(function (response) {
-      if (!response.ok) {
-        throw new Error("Unable to load portfolio data: " + response.status);
-      }
+      if (!response.ok) throw new Error("Unable to load portfolio data: " + response.status);
       return response.json();
     })
     .then(function (data) {
+      if (!data || typeof data !== "object") throw new Error("Portfolio data must be a JSON object");
       renderPortfolio(data);
     })
     .catch(function (error) {
@@ -265,32 +236,22 @@
       document.body.classList.add("data-load-error");
     });
 
-  /* ---------- Smooth scroll for in-page anchors ---------- */
-  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
-    a.addEventListener("click", function (e) {
-      var hash = a.getAttribute("href");
-      if (hash.length > 1) {
-        var target = document.querySelector(hash);
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener("click", function (event) {
+      var hash = anchor.getAttribute("href");
+      var target = hash && hash.length > 1 ? document.querySelector(hash) : null;
+      if (target) {
+        event.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     });
   });
 
-  /* ---------- Back to top ---------- */
   var backToTop = document.querySelector(".back-to-top");
   if (backToTop) {
-    window.addEventListener("scroll", function () {
-      if (window.scrollY > 100) {
-        backToTop.style.display = "block";
-      } else {
-        backToTop.style.display = "none";
-      }
-    });
-    backToTop.addEventListener("click", function (e) {
-      e.preventDefault();
+    window.addEventListener("scroll", function () { backToTop.style.display = window.scrollY > 100 ? "block" : "none"; });
+    backToTop.addEventListener("click", function (event) {
+      event.preventDefault();
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }

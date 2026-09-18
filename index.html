@@ -240,7 +240,7 @@
                             </a>
                         </div>
                     </div>
-                    <form action="mailto:bbhg.work@gmail.com" method="post" enctype="text/plain">
+                    <form action="mailto:bbhg.work@gmail.com" method="post" enctype="text/plain" onsubmit="window.location.href='mailto:bbhg.work@gmail.com?subject=' + encodeURIComponent(this.subject.value) + '&body=' + encodeURIComponent(this.message.value); return false;">
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
