@@ -233,6 +233,19 @@
   color: #fff;
 }
 
+/* Certificates */
+.cert-grid .contact-tile { height: 100%; }
+
+.credly-badge {
+  width: 64px;
+  height: 64px;
+  flex: 0 0 64px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 50%;
+  padding: 5px;
+}
+
 /* Footer */
 .footer-social .btn-square {
   background: var(--dark);
