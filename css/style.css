@@ -44,7 +44,7 @@
   justify-content: center;
 }
 
-.btn.btn-primary { color: #FFFFFF; }
+.btn.btn-primary { color: #000; }
 
 .typed-cursor {
   font-size: 25px;
@@ -179,16 +179,16 @@
 .portfolio-caption small { color: #9fe8cd; }
 
 /* Filter tabs */
-#portfolio-flters li {
+#portfolio-filters button {
   cursor: pointer;
   margin: 0 4px 8px;
   color: #eee;
 }
 
-#portfolio-flters li.active {
+#portfolio-filters button.active {
   background: var(--primary);
   border-color: var(--primary);
-  color: #fff;
+  color: #000;
 }
 
 /* Contact tiles */
@@ -244,6 +244,19 @@
   background: #fff;
   border-radius: 50%;
   padding: 5px;
+}
+
+/* Screen-reader-only text (Bootstrap 5 ships visually-hidden, not sr-only) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* Footer */

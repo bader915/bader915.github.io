@@ -60,12 +60,16 @@
   }
 
   // Portfolio filter
-  var filters = document.querySelectorAll("#portfolio-flters li");
+  var filters = document.querySelectorAll("#portfolio-filters button");
   var items = document.querySelectorAll(".portfolio-item");
   filters.forEach(function (f) {
     f.addEventListener("click", function () {
-      filters.forEach(function (x) { x.classList.remove("active"); });
+      filters.forEach(function (x) {
+        x.classList.remove("active");
+        x.setAttribute("aria-pressed", "false");
+      });
       f.classList.add("active");
+      f.setAttribute("aria-pressed", "true");
       var filter = f.getAttribute("data-filter");
       items.forEach(function (item) {
         var show = filter === "*" || item.classList.contains(filter.slice(1));
