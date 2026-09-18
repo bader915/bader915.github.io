@@ -24,6 +24,8 @@
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
     <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
@@ -35,30 +37,29 @@
     <div class="container">
         <div class="row g-5">
             <!-- Sidebar Start -->
-            <div class="col-lg-4 sticky-lg-top vh-100">
+            <aside class="col-lg-4 sticky-lg-top vh-100">
                 <div class="d-flex flex-column h-100 text-center overflow-auto shadow">
                     <img class="w-100 img-fluid mb-4 sidebar-photo" src="assets/badr-photo.jpg" alt="Badr Albdulmajeed portrait">
                     <h1 class="text-primary mt-2">Badr Albdulmajeed</h1>
-                    <div class="mb-4" style="height: 22px; overflow: visible;">
+                    <div class="typed-text-wrapper mb-4">
                         <h4 class="typed-text-output d-inline-block text-light"></h4>
-                        <div class="typed-text d-none">Electrical Engineer, Computer Vision Engineer, Automation Engineer, Power Systems Engineer, Embedded Systems Engineer</div>
                     </div>
                     <div class="d-flex justify-content-center mt-auto mb-3">
-                        <a class="btn btn-secondary btn-square mx-1" href="https://www.linkedin.com/in/badr-albdulmajeed-b45437155/" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="btn btn-secondary btn-square mx-1" href="https://wa.me/971502859094" target="_blank" rel="noopener" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                        <a class="btn btn-secondary btn-square mx-1" href="https://github.com/bader915" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
-                        <a class="btn btn-secondary btn-square mx-1" href="mailto:bbhg.work@gmail.com" title="Email"><i class="fa fa-envelope"></i></a>
+                        <a class="btn btn-secondary btn-square mx-1" href="https://www.linkedin.com/in/badr-albdulmajeed-b45437155/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                        <a class="btn btn-secondary btn-square mx-1" href="https://wa.me/971502859094" target="_blank" rel="noopener" title="WhatsApp" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                        <a class="btn btn-secondary btn-square mx-1" href="https://github.com/bader915" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+                        <a class="btn btn-secondary btn-square mx-1" href="mailto:bbhg.work@gmail.com" title="Email" aria-label="Email"><i class="fa fa-envelope" aria-hidden="true"></i></a>
                     </div>
                     <div class="d-flex align-items-end justify-content-between border-top">
                         <a href="assets/Badr Albdulmajeed CV.pdf" class="btn w-50 border-end" target="_blank" rel="noopener">Download CV</a>
                         <a href="#contact" class="btn w-50 btn-scroll">Contact Me</a>
                     </div>
                 </div>
-            </div>
+            </aside>
             <!-- Sidebar End -->
 
             <!-- Content Start -->
-            <div class="col-lg-8">
+            <main class="col-lg-8" id="main-content">
                 <!-- About Start -->
                 <section class="py-5 border-bottom" id="about">
                     <h2 class="title pb-3 mb-5">About Me</h2>
@@ -109,99 +110,23 @@
                 <!-- Skills Start -->
                 <section class="py-5 border-bottom" id="skills">
                     <h2 class="title pb-3 mb-5">Skills</h2>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-2">Computer Vision &amp; AI</p>
-                                    <p class="mb-2">90%</p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-2">MATLAB / Simulink</p>
-                                    <p class="mb-2">92%</p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-2">Power Systems &amp; Protection</p>
-                                    <p class="mb-2">85%</p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-2">Embedded &amp; Edge Hardware</p>
-                                    <p class="mb-2">88%</p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-2">PLC &amp; Industrial Automation</p>
-                                    <p class="mb-2">82%</p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-2">Programming (Python · C/C++ · C#)</p>
-                                    <p class="mb-2">86%</p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="row" id="skillsMount"></div>
+                    <div id="skillNotesMount" class="mt-2"></div>
                 </section>
                 <!-- Skills End -->
 
                 <!-- Experience Start -->
                 <section class="py-5 border-bottom" id="experience">
                     <h2 class="title pb-3 mb-5">Experience</h2>
-                    <div class="border-start border-2 border-light pt-2 ps-5">
-                        <div class="position-relative mb-4">
-                            <span class="bi bi-arrow-right fs-4 text-light position-absolute" style="top: -5px; left: -50px;"></span>
-                            <h5 class="mb-1">R&amp;D Project Engineer</h5>
-                            <p class="mb-2">Control Easy, Seri Kembangan, Malaysia | <small>March 2025 - July 2025</small></p>
-                            <p>Developed and tested machine-vision applications for industrial quality control using classification, object detection and segmentation. Built a golf-ball QC station on Raspberry Pi 5 with a Vision Transformer model, interfaced 24 V industrial sensing to 3.3 V GPIO through optical and relay isolation, and integrated vision systems with Siemens S7-1200 / S7-300 / S7-200 PLCs via TIA Portal. Prepared technical manuals covering dataset creation, model training, GUI deployment and hardware wiring.</p>
-                        </div>
-                    </div>
+                    <div class="border-start border-2 border-light pt-2 ps-5" id="experienceMount"></div>
                 </section>
                 <!-- Experience End -->
 
                 <!-- Education Start -->
                 <section class="py-5 border-bottom" id="education">
                     <h2 class="title pb-3 mb-5">Education</h2>
-                    <div class="border-start border-2 border-light pt-2 ps-5">
-                        <div class="position-relative mb-4">
-                            <span class="bi bi-arrow-right fs-4 text-light position-absolute" style="top: -5px; left: -50px;"></span>
-                            <h5 class="mb-1">B.Eng (Hons) Electrical &amp; Electronic Engineering</h5>
-                            <p class="mb-2">Asia Pacific University of Technology &amp; Innovation (APU) | <small>2020–2022 · withdrew · rejoined 2024–2026</small></p>
-                            <p>Final year project: a self-supervised Vision Transformer for PCB defect detection reaching 77.50% test accuracy and 37.25 FPS after GPU optimisation. Coursework spanned power flow analysis, overcurrent relay coordination, PLC automation, embedded systems, computer vision and AI.</p>
-                        </div>
-                        <div class="position-relative mb-4">
-                            <span class="bi bi-arrow-right fs-4 text-light position-absolute" style="top: -5px; left: -50px;"></span>
-                            <h5 class="mb-1">American High School Diploma</h5>
-                            <p class="mb-2">Sama American School — Cairo, Egypt | <small>2017 - 2019</small></p>
-                        </div>
-                    </div>
+                    <div class="border-start border-2 border-light pt-2 ps-5" id="educationMount"></div>
+                    <p id="languagesMount" class="mt-4 mb-0"></p>
                 </section>
                 <!-- Education End -->
 
@@ -211,28 +136,28 @@
                     <div class="row g-4">
                         <div class="col-md-6">
                             <div class="service-item">
-                                <i class="fa fa-2x fa-eye mx-auto mb-4"></i>
+                                <i class="fa fa-2x fa-eye mx-auto mb-4" aria-hidden="true"></i>
                                 <h5 class="mb-2">Computer Vision &amp; AI</h5>
                                 <p class="mb-0">Object detection, segmentation and classification for industrial quality control using YOLOv8, Vision Transformers, OpenCV and PyTorch.</p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="service-item">
-                                <i class="fa fa-2x fa-bolt mx-auto mb-4"></i>
+                                <i class="fa fa-2x fa-bolt mx-auto mb-4" aria-hidden="true"></i>
                                 <h5 class="mb-2">Power Systems &amp; Protection</h5>
                                 <p class="mb-0">Power flow analysis, overcurrent relay coordination, IDMT settings, TCC plotting and microgrid protection studies.</p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="service-item">
-                                <i class="fa fa-2x fa-cogs mx-auto mb-4"></i>
+                                <i class="fa fa-2x fa-cogs mx-auto mb-4" aria-hidden="true"></i>
                                 <h5 class="mb-2">Industrial Automation</h5>
                                 <p class="mb-0">PLC programming (Siemens S7, TIA Portal, SCL), pneumatics and Industry 4.0 machine-vision integration.</p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="service-item">
-                                <i class="fa fa-2x fa-microchip mx-auto mb-4"></i>
+                                <i class="fa fa-2x fa-microchip mx-auto mb-4" aria-hidden="true"></i>
                                 <h5 class="mb-2">Embedded Systems</h5>
                                 <p class="mb-0">Raspberry Pi 5, Jetson Orin Nano, ESP32 and Arduino hardware bring-up, sensor interfacing and GUI deployment.</p>
                             </div>
@@ -243,7 +168,7 @@
 
                 <!-- Portfolio Start -->
                 <section class="py-5 border-bottom" id="portfolio">
-                    <h2 class="title pb-3 mb-5">Portfolio</h2>
+                    <h2 class="title pb-3 mb-5">Portfolio <span class="sec-note">29 projects</span></h2>
                     <div class="row">
                         <div class="col-12">
                             <div class="row">
@@ -254,80 +179,11 @@
                                         <button type="button" class="btn btn-secondary" data-filter=".power" aria-pressed="false"><i class="fa fa-bolt me-2" aria-hidden="true"></i>Power</button>
                                         <button type="button" class="btn btn-secondary" data-filter=".automation" aria-pressed="false"><i class="fa fa-cogs me-2" aria-hidden="true"></i>Automation</button>
                                         <button type="button" class="btn btn-secondary" data-filter=".embedded" aria-pressed="false"><i class="fa fa-microchip me-2" aria-hidden="true"></i>Embedded</button>
+                                        <button type="button" class="btn btn-secondary" data-filter=".software" aria-pressed="false"><i class="fa fa-code me-2" aria-hidden="true"></i>Software</button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row portfolio-container">
-                                <div class="col-md-6 mb-4 portfolio-item vision">
-                                    <div class="bg-secondary p-4 h-100">
-                                        <h5 class="mb-2">PCB Defect Detection — Vision Transformer</h5>
-                                        <p class="mb-0">Final-year project: a self-supervised Vision Transformer pipeline for PCB defect detection — 77.50% test accuracy, 0.8281 weighted F1 across 22 classes and 37.25 FPS after GPU optimisation.</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-4 portfolio-item vision">
-                                    <div class="position-relative overflow-hidden mb-2">
-                                        <img class="img-fluid w-100" src="assets/projects/pcb-inspection-gui.jpg" alt="PCB component inspection GUI">
-                                        <div class="portfolio-caption">
-                                            <h5>PCB Component Inspection GUI</h5>
-                                            <small>Computer Vision</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-4 portfolio-item vision">
-                                    <div class="position-relative overflow-hidden mb-2">
-                                        <img class="img-fluid w-100" src="assets/projects/wood-segmentation-gui.jpg" alt="Wood surface segmentation GUI">
-                                        <div class="portfolio-caption">
-                                            <h5>Wood Defect Segmentation</h5>
-                                            <small>Computer Vision</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-4 portfolio-item vision">
-                                    <div class="position-relative overflow-hidden mb-2">
-                                        <img class="img-fluid w-100" src="assets/projects/fabric-detection-gui.jpg" alt="Fabric defect detection GUI">
-                                        <div class="portfolio-caption">
-                                            <h5>Fabric Quality Control</h5>
-                                            <small>Computer Vision</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-4 portfolio-item vision">
-                                    <div class="bg-secondary p-4 h-100">
-                                        <h5 class="mb-2">Hospital Logistics AGV — Vision System</h5>
-                                        <p class="mb-0">Perception subsystem for an autonomous hospital logistics robot: stereo ZED 2i camera on Jetson Orin Nano with a YOLOv8 detector reaching 98.99% mAP@50, served through ONNX Runtime GPU with ROS2 nodes.</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-4 portfolio-item power">
-                                    <div class="bg-secondary p-4 h-100">
-                                        <h5 class="mb-2">10-Bus Power Flow Analysis</h5>
-                                        <p class="mb-0">Built and analysed a 10-bus network with Newton-Raphson, Gauss-Seidel and Fast Decoupled solvers; benchmarked bus voltages, line flows, generation and system losses under additional loading.</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-4 portfolio-item power">
-                                    <div class="bg-secondary p-4 h-100">
-                                        <h5 class="mb-2">Overcurrent Relay Coordination Tool</h5>
-                                        <p class="mb-0">MATLAB App Designer tool for IDMT relay coordination, operating-time calculation, TCC curves and validation reporting.</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-4 portfolio-item power">
-                                    <div class="bg-secondary p-4 h-100">
-                                        <h5 class="mb-2">AC Microgrid Overcurrent Protection</h5>
-                                        <p class="mb-0">3-bus AC microgrid in Simulink with transformers, CTs, breakers and relays tested under IEC and IEEE inverse characteristics.</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-4 portfolio-item automation">
-                                    <div class="bg-secondary p-4 h-100">
-                                        <h5 class="mb-2">Automated Bus Door Control</h5>
-                                        <p class="mb-0">PLC and pneumatic control sequence for safe automated bus-door operation.</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-4 portfolio-item embedded">
-                                    <div class="bg-secondary p-4 h-100">
-                                        <h5 class="mb-2">Automated Parking System</h5>
-                                        <p class="mb-0">Arduino-based parking system for vehicle detection and space control.</p>
-                                    </div>
-                                </div>
-                            </div>
+                            <div class="row portfolio-container" id="portfolioMount"></div>
                         </div>
                     </div>
                 </section>
@@ -336,71 +192,9 @@
                 <!-- Certificates Start -->
                 <section class="py-5 border-bottom" id="certificates">
                     <h2 class="title pb-3 mb-5">Certificates</h2>
-                    <p class="mb-4">All certificates below are issued by MathWorks (Sep 2026). Click any certificate to open the original PDF and verify it.</p>
-                    <div class="row g-3 cert-grid">
-                        <div class="col-md-6">
-                            <a class="contact-tile" href="assets/Matlab on-Ramp certificate.pdf" target="_blank" rel="noopener">
-                                <span class="contact-icon"><i class="fa fa-file-pdf"></i></span>
-                                <span>
-                                    <span class="contact-label">MathWorks · Sep 2026 · Click to open PDF</span>
-                                    <span class="contact-value">MATLAB Onramp</span>
-                                </span>
-                            </a>
-                        </div>
-                        <div class="col-md-6">
-                            <a class="contact-tile" href="assets/Simulink on-Ramp certificate.pdf" target="_blank" rel="noopener">
-                                <span class="contact-icon"><i class="fa fa-file-pdf"></i></span>
-                                <span>
-                                    <span class="contact-label">MathWorks · Sep 2026 · Click to open PDF</span>
-                                    <span class="contact-value">Simulink Onramp</span>
-                                </span>
-                            </a>
-                        </div>
-                        <div class="col-md-6">
-                            <a class="contact-tile" href="assets/Core MATLAB Skills.pdf" target="_blank" rel="noopener">
-                                <span class="contact-icon"><i class="fa fa-file-pdf"></i></span>
-                                <span>
-                                    <span class="contact-label">MathWorks · Sep 2026 · Click to open PDF</span>
-                                    <span class="contact-value">Core MATLAB Skills Learning Path</span>
-                                </span>
-                            </a>
-                        </div>
-                        <div class="col-md-6">
-                            <a class="contact-tile" href="assets/MATLAB Desktop Tools and Troubleshooting Scripts.pdf" target="_blank" rel="noopener">
-                                <span class="contact-icon"><i class="fa fa-file-pdf"></i></span>
-                                <span>
-                                    <span class="contact-label">MathWorks · Sep 2026 · Click to open PDF</span>
-                                    <span class="contact-value">MATLAB Desktop Tools &amp; Troubleshooting Scripts</span>
-                                </span>
-                            </a>
-                        </div>
-                        <div class="col-md-6">
-                            <a class="contact-tile" href="assets/Explore Data with MATLAB Plots.pdf" target="_blank" rel="noopener">
-                                <span class="contact-icon"><i class="fa fa-file-pdf"></i></span>
-                                <span>
-                                    <span class="contact-label">MathWorks · Sep 2026 · Click to open PDF</span>
-                                    <span class="contact-value">Explore Data with MATLAB Plots</span>
-                                </span>
-                            </a>
-                        </div>
-                        <div class="col-md-6">
-                            <a class="contact-tile" href="assets/Make and Manipulate Matrices.pdf" target="_blank" rel="noopener">
-                                <span class="contact-icon"><i class="fa fa-file-pdf"></i></span>
-                                <span>
-                                    <span class="contact-label">MathWorks · Sep 2026 · Click to open PDF</span>
-                                    <span class="contact-value">Make and Manipulate Matrices</span>
-                                </span>
-                            </a>
-                        </div>
-                        <div class="col-md-6">
-                            <a class="contact-tile" href="assets/Calculations with Vectors and Matrices.pdf" target="_blank" rel="noopener">
-                                <span class="contact-icon"><i class="fa fa-file-pdf"></i></span>
-                                <span>
-                                    <span class="contact-label">MathWorks · Sep 2026 · Click to open PDF</span>
-                                    <span class="contact-value">Calculations with Vectors and Matrices</span>
-                                </span>
-                            </a>
-                        </div>
+                    <p class="mb-4">The certificates below are issued by MathWorks (Sep 2026) — click any card to open the original PDF. The Credly item is a separate verified digital badge.</p>
+                    <div class="row g-3 cert-grid" id="certsMount"></div>
+                    <div class="row g-3 cert-grid mt-0">
                         <div class="col-12">
                             <a class="contact-tile" href="https://www.credly.com/earner/earned/badge/26264633-9031-4a9e-a353-98b5489c7375" target="_blank" rel="noopener">
                                 <img class="credly-badge" src="assets/Credly.png" alt="Credly verified digital badge" width="64" height="64">
@@ -420,7 +214,7 @@
                     <div class="row g-3 mb-4">
                         <div class="col-md-4">
                             <a class="contact-tile" href="mailto:bbhg.work@gmail.com">
-                                <span class="contact-icon"><i class="fa fa-envelope"></i></span>
+                                <span class="contact-icon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
                                 <span>
                                     <span class="contact-label">Email</span>
                                     <span class="contact-value">bbhg.work@gmail.com</span>
@@ -429,7 +223,7 @@
                         </div>
                         <div class="col-md-4">
                             <a class="contact-tile" href="tel:+971502859094">
-                                <span class="contact-icon"><i class="fa fa-phone-alt"></i></span>
+                                <span class="contact-icon"><i class="fa fa-phone-alt" aria-hidden="true"></i></span>
                                 <span>
                                     <span class="contact-label">Phone / WhatsApp</span>
                                     <span class="contact-value">+971 50 285 9094</span>
@@ -438,7 +232,7 @@
                         </div>
                         <div class="col-md-4">
                             <a class="contact-tile" href="https://www.linkedin.com/in/badr-albdulmajeed-b45437155/" target="_blank" rel="noopener">
-                                <span class="contact-icon"><i class="fab fa-linkedin-in"></i></span>
+                                <span class="contact-icon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
                                 <span>
                                     <span class="contact-label">LinkedIn</span>
                                     <span class="contact-value">badr-albdulmajeed</span>
@@ -468,7 +262,7 @@
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control border-0 bg-secondary" placeholder="Leave a message here" id="message" name="message" style="height: 200px" required></textarea>
+                                    <textarea class="form-control border-0 bg-secondary message-field" placeholder="Leave a message here" id="message" name="message" required></textarea>
                                     <label for="message">Message</label>
                                 </div>
                             </div>
@@ -481,7 +275,7 @@
                 <!-- Contact End -->
 
                 <!-- Footer Start -->
-                <section>
+                <footer>
                     <div class="bg-secondary text-light text-center p-5">
                         <div class="d-flex justify-content-center mb-4 footer-social">
                             <a class="btn btn-square mx-1" href="https://www.linkedin.com/in/badr-albdulmajeed-b45437155/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
@@ -491,15 +285,15 @@
                         </div>
                         <p class="m-0">&copy; 2026 Badr Albdulmajeed. All Rights Reserved.</p>
                     </div>
-                </section>
+                </footer>
                 <!-- Footer End -->
-            </div>
+            </main>
             <!-- Content End -->
         </div>
     </div>
 
     <!-- Back to Top -->
-    <a href="#" class="back-to-top"><i class="fa fa-angle-double-up"></i></a>
+    <a href="#" class="back-to-top" aria-label="Back to top"><i class="fa fa-angle-double-up" aria-hidden="true"></i></a>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>

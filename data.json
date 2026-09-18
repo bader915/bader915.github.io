@@ -1,0 +1,235 @@
+{
+  "roles": [
+    "Electrical Engineer",
+    "Computer Vision Engineer",
+    "Automation Engineer",
+    "Power Systems Engineer",
+    "Embedded Systems Engineer"
+  ],
+  "skills": [
+    { "name": "Computer Vision & AI", "level": 90 },
+    { "name": "MATLAB / Simulink", "level": 92 },
+    { "name": "Power Systems & Protection", "level": 85 },
+    { "name": "Embedded & Edge Hardware", "level": 88 },
+    { "name": "PLC & Industrial Automation", "level": 82 },
+    { "name": "Programming (Python · C/C++ · C#)", "level": 86 }
+  ],
+  "skillNotes": [
+    "Power Systems & Protection: MATLAB/Simulink, PowerWorld, IDMT relays",
+    "Engineering Software: SolidWorks, TinkerCAD, LTspice, DIALux, LabVIEW, ROS2"
+  ],
+  "experience": [
+    {
+      "title": "R&D Project Engineer",
+      "org": "Control Easy",
+      "location": "Seri Kembangan, Malaysia",
+      "period": "March 2025 - July 2025",
+      "description": "Developed and tested machine-vision applications for industrial quality control using classification, object detection and segmentation. Built a golf-ball QC station on Raspberry Pi 5 with a Vision Transformer model, interfaced 24 V industrial sensing to 3.3 V GPIO through optical and relay isolation, and integrated vision systems with Siemens S7-1200 / S7-300 / S7-200 PLCs via TIA Portal. Prepared technical manuals covering dataset creation, model training, GUI deployment and hardware wiring."
+    }
+  ],
+  "education": [
+    {
+      "degree": "B.Eng (Hons) Electrical & Electronic Engineering",
+      "school": "Asia Pacific University of Technology & Innovation (APU)",
+      "period": "2020–2022 · withdrew · rejoined 2024–2026",
+      "description": "Final year project: a self-supervised Vision Transformer for PCB defect detection reaching 77.50% test accuracy and 37.25 FPS after GPU optimisation. Coursework spanned power flow analysis, overcurrent relay coordination, PLC automation, embedded systems, computer vision and AI."
+    },
+    {
+      "degree": "American High School Diploma",
+      "school": "Sama American School — Cairo, Egypt",
+      "period": "2017 - 2019",
+      "description": ""
+    }
+  ],
+  "languages": [
+    { "name": "Arabic", "level": "Native" },
+    { "name": "English", "level": "Fluent" }
+  ],
+  "selectedProjects": [
+    {
+      "title": "PCB Defect Detection — Vision Transformer",
+      "category": "vision",
+      "badge": "Final Year Project",
+      "tools": "PyTorch · SimCLR · MaxViT-Small · RF-DETR · DINOv2 · ONNX Runtime CUDA · Streamlit · OpenCV · Roboflow",
+      "metrics": "77.50% test accuracy, 0.8281 weighted F1 across 22 classes, 68.83% mAP@50, and 37.25 FPS."
+    },
+    {
+      "title": "Hospital Logistics AGV — Vision System",
+      "category": "vision",
+      "badge": "Team Project",
+      "tools": "NVIDIA Jetson Orin Nano · ZED 2i · YOLOv8 · PyTorch · ONNX Runtime GPU · ROS2 · PyQt5 · Roboflow",
+      "metrics": "98.99% mAP@50, 98.66% precision, and 97.85% recall."
+    },
+    {
+      "title": "Overcurrent Relay Coordination Tool",
+      "category": "power",
+      "description": "MATLAB App Designer tool for ten-relay IDMT coordination, operating-time calculations, TCC curves, system analysis, validation reporting, and maximum calculation error of 1.00%."
+    },
+    {
+      "title": "10-Bus Power Flow Analysis",
+      "category": "power",
+      "description": "Built and analysed a 10-bus network with Newton-Raphson, Gauss-Seidel and Fast Decoupled solvers; benchmarked bus voltages, line flows, generation and system losses under additional loading."
+    },
+    {
+      "title": "AC Microgrid Overcurrent Protection",
+      "category": "power",
+      "description": "3-bus AC microgrid in Simulink with transformers, CTs, breakers and relays tested under IEC and IEEE inverse characteristics."
+    },
+    {
+      "title": "PCB Component Inspection GUI",
+      "category": "vision",
+      "image": "assets/projects/pcb-inspection-gui.jpg",
+      "imageAlt": "PCB component inspection GUI",
+      "badge": "Computer Vision"
+    },
+    {
+      "title": "Wood Defect Segmentation",
+      "category": "vision",
+      "image": "assets/projects/wood-segmentation-gui.jpg",
+      "imageAlt": "Wood surface segmentation GUI",
+      "badge": "Computer Vision"
+    },
+    {
+      "title": "Fabric Quality Control",
+      "category": "vision",
+      "image": "assets/projects/fabric-detection-gui.jpg",
+      "imageAlt": "Fabric defect detection GUI",
+      "badge": "Computer Vision"
+    },
+    {
+      "title": "Automated Bus Door Control",
+      "category": "automation",
+      "description": "PLC and pneumatic control sequence for safe automated bus-door operation."
+    },
+    {
+      "title": "Automated Parking System",
+      "category": "embedded",
+      "description": "Arduino-based parking system for vehicle detection and space control."
+    }
+  ],
+  "otherProjects": [
+    {
+      "title": "Medication Scanner & Obstacle Detection GUI",
+      "category": "vision",
+      "description": "Python GUI on Jetson for medication image scanning and obstacle detection.",
+      "stack": "Python · Jetson"
+    },
+    {
+      "title": "Automated Golf Ball Quality Control",
+      "category": "vision",
+      "description": "Raspberry Pi inspection rig using camera input and a Vision Transformer to classify golf balls.",
+      "stack": "Raspberry Pi · Vision Transformer"
+    },
+    {
+      "title": "AI Hand Gesture Recognition",
+      "category": "vision",
+      "description": "Python and OpenCV system recognising hand gestures from live camera input.",
+      "stack": "Python · OpenCV"
+    },
+    {
+      "title": "Vision-Based Fruit Inspection System",
+      "category": "vision",
+      "description": "Python, OpenCV and Roboflow pipeline inspecting fruit images for visual quality classification.",
+      "stack": "Python · OpenCV · Roboflow"
+    },
+    {
+      "title": "Modular Smart Power Hub — Honeycomb System",
+      "category": "power",
+      "description": "Modular power-distribution hub designed in SolidWorks with a honeycomb-inspired structure.",
+      "stack": "SolidWorks"
+    },
+    {
+      "title": "Single-Phase Transformer & Three-Phase Alternator Simulation",
+      "category": "power",
+      "description": "Simulated transformer and alternator behaviour; reviewed voltage and current characteristics.",
+      "stack": "Simulation"
+    },
+    {
+      "title": "Microgrid Technology Simulation",
+      "category": "power",
+      "description": "Simulated microgrid operating concepts across MATLAB and LabVIEW.",
+      "stack": "MATLAB · LabVIEW"
+    },
+    {
+      "title": "Off-Grid Wind Energy System",
+      "category": "power",
+      "description": "Modelled an off-grid wind energy system and reviewed its output in Simulink.",
+      "stack": "Simulink"
+    },
+    {
+      "title": "Sound Purifier",
+      "category": "power",
+      "description": "MATLAB signal-processing model to reduce unwanted sound components.",
+      "stack": "MATLAB · DSP"
+    },
+    {
+      "title": "BJT Audio Amplifier",
+      "category": "power",
+      "description": "Simulated and analysed a BJT amplifier for audio signal amplification in MATLAB.",
+      "stack": "MATLAB · Analog"
+    },
+    {
+      "title": "Discrete-Time System using Z-Transform",
+      "category": "power",
+      "description": "Analysed a discrete-time system using Z-transform methods and MATLAB calculations.",
+      "stack": "MATLAB · DSP"
+    },
+    {
+      "title": "FM Modulation & Demodulation",
+      "category": "power",
+      "description": "LabVIEW model for FM signal generation, modulation and demodulation.",
+      "stack": "LabVIEW · Comms"
+    },
+    {
+      "title": "Temperature Control System",
+      "category": "embedded",
+      "description": "Arduino and TinkerCAD model for temperature sensing and automatic control.",
+      "stack": "Arduino · TinkerCAD"
+    },
+    {
+      "title": "Automotive Part Control System",
+      "category": "automation",
+      "description": "C-based control system for handling and checking automotive parts.",
+      "stack": "C Programming"
+    },
+    {
+      "title": "Coffee Making Process",
+      "category": "automation",
+      "description": "LabVIEW process model for monitoring and controlling coffee preparation steps.",
+      "stack": "LabVIEW"
+    },
+    {
+      "title": "Vaccination Center System",
+      "category": "software",
+      "description": "Python system organising vaccination-centre records and basic service flow.",
+      "stack": "Python"
+    },
+    {
+      "title": "Vaccination Inventory System",
+      "category": "software",
+      "description": "C++ inventory system tracking vaccine stock, records and updates.",
+      "stack": "C++"
+    },
+    {
+      "title": "Library Lighting Design",
+      "category": "software",
+      "description": "Library lighting levels and fixture layout planned using DIALux.",
+      "stack": "DIALux"
+    },
+    {
+      "title": "Go-Kart Design",
+      "category": "software",
+      "description": "Go-kart assembly and mechanical components designed in SolidWorks.",
+      "stack": "SolidWorks"
+    }
+  ],
+  "courses": [
+    { "name": "MATLAB Onramp", "issuer": "MathWorks", "date": "Sep 2026", "href": "assets/Matlab on-Ramp certificate.pdf" },
+    { "name": "Simulink Onramp", "issuer": "MathWorks", "date": "Sep 2026", "href": "assets/Simulink on-Ramp certificate.pdf" },
+    { "name": "Core MATLAB Skills Learning Path", "issuer": "MathWorks", "date": "Sep 2026", "href": "assets/Core MATLAB Skills.pdf" },
+    { "name": "MATLAB Desktop Tools & Troubleshooting Scripts", "issuer": "MathWorks", "date": "Sep 2026", "href": "assets/MATLAB Desktop Tools and Troubleshooting Scripts.pdf" },
+    { "name": "Explore Data with MATLAB Plots", "issuer": "MathWorks", "date": "Sep 2026", "href": "assets/Explore Data with MATLAB Plots.pdf" },
+    { "name": "Make and Manipulate Matrices", "issuer": "MathWorks", "date": "Sep 2026", "href": "assets/Make and Manipulate Matrices.pdf" },
+    { "name": "Calculations with Vectors and Matrices", "issuer": "MathWorks", "date": "Sep 2026", "href": "assets/Calculations with Vectors and Matrices.pdf" }
+  ]
+}
