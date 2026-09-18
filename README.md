@@ -6,7 +6,7 @@ and a scrollable right column (About, Skills, Experience, Services, Portfolio, C
 
 - **Responsive:** Bootstrap 5 grid — the sidebar collapses into a stacked layout below `992px`.
 - **Contact email:** bbhg.work@gmail.com
-- **CV:** `assets/Badr_Albdulmajeed_CV.pdf` (keep in sync with the latest CV package).
+- **CV:** `assets/Badr Albdulmajeed CV.pdf` (keep in sync with the latest CV package).
 
 ## Structure
 
