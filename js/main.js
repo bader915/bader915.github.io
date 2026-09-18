@@ -79,6 +79,7 @@
 
     var meta = el("p", "mb-2");
     var organization = isEducation ? entry.school : entry.org;
+    if (!isEducation && entry.location) organization += ", " + entry.location;
     meta.appendChild(document.createTextNode((organization || "") + (organization ? " | " : "")));
     meta.appendChild(el("small", null, entry.period || ""));
     item.appendChild(meta);
@@ -113,7 +114,7 @@
     var mount = document.getElementById("portfolioMount");
     if (!mount || !project || !project.title) return;
     var category = project.category || "software";
-    var column = el("div", "col-md-6 mb-4 portfolio-item " + category);
+    var column = el("div", "col-md-6 mb-4 portfolio-item project-reveal " + category);
 
     if (project.image) {
       var frame = el("div", "position-relative overflow-hidden mb-2");
@@ -202,6 +203,37 @@
     });
   }
 
+  function initProjectReveal() {
+    var projects = document.querySelectorAll(".project-reveal");
+    if (!projects.length) return;
+
+    projects.forEach(function (project, index) {
+      project.style.setProperty("--project-delay", (index % 4) * 70 + "ms");
+      project.style.setProperty("--project-shift", index % 2 ? "42px" : "-42px");
+    });
+
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      projects.forEach(function (project) { project.classList.add("is-visible"); });
+      return;
+    }
+
+    if (!("IntersectionObserver" in window)) {
+      projects.forEach(function (project) { project.classList.add("is-visible"); });
+      return;
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+
+    projects.forEach(function (project) { observer.observe(project); });
+  }
+
   function renderPortfolio(data) {
     data = data && typeof data === "object" ? data : {};
     startTyped(data.roles);
@@ -214,6 +246,7 @@
     (Array.isArray(data.courses) ? data.courses : []).forEach(renderCourse);
     initBars();
     initFilters();
+    initProjectReveal();
   }
 
   var spinner = document.getElementById("spinner");
