@@ -1,312 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Badr Albdulmajeed | Electrical &amp; Electronic Engineer</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Badr Albdulmajeed, Electrical and Electronic Engineering, Computer Vision, Power Systems, PLC Automation" name="keywords">
-    <meta content="Portfolio of Badr Albdulmajeed — Electrical and Electronic Engineer (B.Eng Hons, APU 2026) based in the UAE." name="description">
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Badr Albdulmajeed — moved to a new portfolio</title>
+<meta name="description" content="Badr Albdulmajeed's portfolio has moved to bader915.github.io/portfolio.">
+<link rel="canonical" href="https://bader915.github.io/portfolio/">
+<meta name="robots" content="noindex, follow">
+<meta http-equiv="refresh" content="0; url=https://bader915.github.io/portfolio/">
+<script>
+  // Old section links (for example #portfolio or #contact) land on the matching place in the new site.
+  (function () {
+    var base = 'https://bader915.github.io/portfolio/';
+    var map = {
+      about: 'index.html#about', experience: 'index.html#about', education: 'index.html#about',
+      skills: 'index.html#about', certificates: 'index.html#about', services: 'index.html#about',
+      portfolio: 'index.html#index', contact: 'contact.html'
+    };
+    var key = location.hash.replace('#', '');
+    location.replace(base + (map[key] || ''));
+  })();
+</script>
+<style>
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #06090d; color: #f4f6f8;
+    font: 17px/1.5 "Segoe UI", "Helvetica Neue", Arial, sans-serif; text-align: center; padding: 24px; }
+  a { color: #ffd23f; font-weight: 600; }
+</style>
 </head>
-
 <body>
-    <a class="skip-link" href="#main-content">Skip to main content</a>
-
-    <nav class="section-indicator" aria-label="Current portfolio section">
-        <a href="#about" data-section="about" aria-label="About Me"><span>About</span></a>
-        <a href="#skills" data-section="skills" aria-label="Skills"><span>Skills</span></a>
-        <a href="#experience" data-section="experience" aria-label="Experience"><span>Experience</span></a>
-        <a href="#education" data-section="education" aria-label="Education"><span>Education</span></a>
-        <a href="#services" data-section="services" aria-label="Services"><span>Services</span></a>
-        <a href="#portfolio" data-section="portfolio" aria-label="Portfolio"><span>Portfolio</span></a>
-        <a href="#certificates" data-section="certificates" aria-label="Certificates"><span>Certificates</span></a>
-        <a href="#contact" data-section="contact" aria-label="Contact Me"><span>Contact</span></a>
-    </nav>
-
-    <!-- Spinner Start -->
-    <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="loader-window">
-            <img src="assets/eye-loader new.jpg" alt="Loading..." class="loader-sprite-track">
-        </div>
-    </div>
-    <!-- Spinner End -->
-
-    <div class="container">
-        <div class="row g-5">
-            <!-- Sidebar Start -->
-            <aside class="col-lg-4 sticky-lg-top vh-100">
-                <div class="d-flex flex-column h-100 text-center overflow-auto shadow">
-                    <img class="w-100 img-fluid mb-4 sidebar-photo" src="assets/badr-photo.jpg" alt="Badr Albdulmajeed portrait">
-                    <h1 class="text-primary mt-2">Badr Albdulmajeed</h1>
-                    <div class="typed-text-wrapper mb-4">
-                        <h4 class="typed-text-output d-inline-block text-light"></h4>
-                    </div>
-                    <div class="d-flex justify-content-center mt-auto mb-3">
-                        <a class="btn btn-secondary btn-square mx-1" href="https://www.linkedin.com/in/badr-albdulmajeed-b45437155/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
-                        <a class="btn btn-secondary btn-square mx-1" href="https://wa.me/971502859094" target="_blank" rel="noopener" title="WhatsApp" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
-                        <a class="btn btn-secondary btn-square mx-1" href="https://github.com/bader915" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
-                        <a class="btn btn-secondary btn-square mx-1" href="mailto:bbhg.work@gmail.com" title="Email" aria-label="Email"><i class="fa fa-envelope" aria-hidden="true"></i></a>
-                    </div>
-                    <div class="d-flex align-items-end justify-content-between border-top">
-                        <a href="assets/Badr Albdulmajeed CV.pdf" class="btn w-50 border-end" target="_blank" rel="noopener">Download CV</a>
-                        <a href="#contact" class="btn w-50 btn-scroll">Contact Me</a>
-                    </div>
-                </div>
-            </aside>
-            <!-- Sidebar End -->
-
-            <!-- Content Start -->
-            <main class="col-lg-8" id="main-content">
-                <!-- About Start -->
-                <section class="py-5 border-bottom" id="about">
-                    <h2 class="title pb-3 mb-5">About Me</h2>
-                    <p>I am a fresh <strong>Electrical &amp; Electronic Engineering graduate with Honours</strong> from Asia Pacific University of Technology &amp; Innovation (APU, 2026). During university and my R&amp;D role at <strong>Control Easy</strong>, I worked across power systems, protection, PLCs, sensors, embedded hardware, industrial automation and computer vision.</p>
-                    <p>At Control Easy I worked on several machine vision projects back to back, and each one taught me something the last one didn't. I started with fabric classification and object detection, where I learned the full workflow — building a dataset, training a model in Python and TensorFlow, and putting together a GUI. From there I moved to wood defect segmentation, which pushed me from basic detection into pixel-level segmentation with YOLOv8. The PCB inspection project taught me that a good model isn't the whole answer — I had to write extra logic on top of it to catch components that were missing entirely, which the model alone couldn't flag. My last project tied it together: an automated golf ball inspection station on a Raspberry Pi 5, wired to a 24V proximity sensor through a relay circuit I designed myself, running a Vision Transformer model I switched to after my first model struggled on the live camera feed. Alongside the software, I got hands-on training on Siemens S7-1200, S7-300 and S7-200 PLCs, programming in SCL through TIA Portal. Since the work was project-based, I managed my own tasks week to week, and I wrote the manuals for everything I built so the company could use it after I left.</p>
-                    <div class="row mb-4">
-                        <div class="col-sm-6 py-1"><span class="fw-medium text-primary">Name:</span> Badr Albdulmajeed</div>
-                        <div class="col-sm-6 py-1"><span class="fw-medium text-primary">Degree:</span> B.Eng (Hons) EEE</div>
-                        <div class="col-sm-6 py-1"><span class="fw-medium text-primary">Experience:</span> R&amp;D Project Engineer</div>
-                        <div class="col-sm-6 py-1"><span class="fw-medium text-primary">Phone:</span> +971 50 285 9094</div>
-                        <div class="col-sm-6 py-1"><span class="fw-medium text-primary">Email:</span> bbhg.work@gmail.com</div>
-                        <div class="col-sm-6 py-1"><span class="fw-medium text-primary">Address:</span> Sharjah, UAE</div>
-                        <div class="col-sm-6 py-1"><span class="fw-medium text-primary">Visa:</span> UAE Golden Visa</div>
-                        <div class="col-sm-6 py-1"><span class="fw-medium text-primary">Availability:</span> Immediate Start</div>
-                    </div>
-                    <div class="row g-4">
-                        <div class="col-md-4 col-lg-6 col-xl-4">
-                            <div class="d-flex bg-secondary p-4">
-                                <div class="flex-shrink-0 display-5 text-primary mb-0">29</div>
-                                <div class="ps-3">
-                                    <p class="mb-0">Projects</p>
-                                    <h5 class="mb-0">Completed</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-lg-6 col-xl-4">
-                            <div class="d-flex bg-secondary p-4">
-                                <div class="flex-shrink-0 display-5 text-primary mb-0">7</div>
-                                <div class="ps-3">
-                                    <p class="mb-0">MathWorks</p>
-                                    <h5 class="mb-0">Certifications</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-lg-6 col-xl-4">
-                            <div class="d-flex bg-secondary p-4">
-                                <div class="flex-shrink-0 display-5 text-primary mb-0">1</div>
-                                <div class="ps-3">
-                                    <p class="mb-0">R&amp;D</p>
-                                    <h5 class="mb-0">Internship</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- About End -->
-
-                <!-- Skills Start -->
-                <section class="py-5 border-bottom" id="skills">
-                    <h2 class="title pb-3 mb-5">Skills</h2>
-                    <div class="row" id="skillsMount"></div>
-                    <div id="skillNotesMount" class="mt-2"></div>
-                </section>
-                <!-- Skills End -->
-
-                <!-- Experience Start -->
-                <section class="py-5 border-bottom" id="experience">
-                    <h2 class="title pb-3 mb-5">Experience</h2>
-                    <div class="border-start border-2 border-light pt-2 ps-5" id="experienceMount"></div>
-                </section>
-                <!-- Experience End -->
-
-                <!-- Education Start -->
-                <section class="py-5 border-bottom" id="education">
-                    <h2 class="title pb-3 mb-5">Education</h2>
-                    <div class="border-start border-2 border-light pt-2 ps-5" id="educationMount"></div>
-                    <p id="languagesMount" class="mt-4 mb-0"></p>
-                </section>
-                <!-- Education End -->
-
-                <!-- Services Start -->
-                <section class="py-5 border-bottom" id="services">
-                    <h2 class="title pb-3 mb-5">Services</h2>
-                    <div class="row g-4">
-                        <div class="col-md-6">
-                            <div class="service-item">
-                                <i class="fa fa-2x fa-eye mx-auto mb-4" aria-hidden="true"></i>
-                                <h5 class="mb-2">Computer Vision &amp; AI</h5>
-                                <p class="mb-0">Object detection, segmentation and classification for industrial quality control using YOLOv8, Vision Transformers, OpenCV and PyTorch.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="service-item">
-                                <i class="fa fa-2x fa-bolt mx-auto mb-4" aria-hidden="true"></i>
-                                <h5 class="mb-2">Power Systems &amp; Protection</h5>
-                                <p class="mb-0">Power flow analysis, overcurrent relay coordination, IDMT settings, TCC plotting and microgrid protection studies.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="service-item">
-                                <i class="fa fa-2x fa-cogs mx-auto mb-4" aria-hidden="true"></i>
-                                <h5 class="mb-2">Industrial Automation</h5>
-                                <p class="mb-0">PLC programming (Siemens S7, TIA Portal, SCL), pneumatics and Industry 4.0 machine-vision integration.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="service-item">
-                                <i class="fa fa-2x fa-microchip mx-auto mb-4" aria-hidden="true"></i>
-                                <h5 class="mb-2">Embedded Systems</h5>
-                                <p class="mb-0">Raspberry Pi 5, Jetson Orin Nano, ESP32 and Arduino hardware bring-up, sensor interfacing and GUI deployment.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- Services End -->
-
-                <!-- Portfolio Start -->
-                <section class="py-5 border-bottom" id="portfolio">
-                    <h2 class="title pb-3 mb-5">Portfolio <span class="sec-note">29 projects</span></h2>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="row">
-                                <div class="col-12 text-center mb-2">
-                                    <div class="list-inline mb-4" id="portfolio-filters">
-                                        <button type="button" class="btn btn-secondary active" data-filter="*" aria-pressed="true"><i class="fa fa-star me-2" aria-hidden="true"></i>All</button>
-                                        <button type="button" class="btn btn-secondary" data-filter=".vision" aria-pressed="false"><i class="fa fa-eye me-2" aria-hidden="true"></i>Vision &amp; AI</button>
-                                        <button type="button" class="btn btn-secondary" data-filter=".power" aria-pressed="false"><i class="fa fa-bolt me-2" aria-hidden="true"></i>Power</button>
-                                        <button type="button" class="btn btn-secondary" data-filter=".automation" aria-pressed="false"><i class="fa fa-cogs me-2" aria-hidden="true"></i>Automation</button>
-                                        <button type="button" class="btn btn-secondary" data-filter=".embedded" aria-pressed="false"><i class="fa fa-microchip me-2" aria-hidden="true"></i>Embedded</button>
-                                        <button type="button" class="btn btn-secondary" data-filter=".software" aria-pressed="false"><i class="fa fa-code me-2" aria-hidden="true"></i>Software</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row portfolio-container" id="portfolioMount"></div>
-                        </div>
-                    </div>
-                </section>
-                <!-- Portfolio End -->
-
-                <!-- Certificates Start -->
-                <section class="py-5 border-bottom" id="certificates">
-                    <h2 class="title pb-3 mb-5">Certificates</h2>
-                    <p class="mb-4">The certificates below are issued by MathWorks (Sep 2026) — click any card to open the original PDF. The Credly item is a separate verified digital badge.</p>
-                    <div class="row g-3 cert-grid" id="certsMount"></div>
-                    <div class="row g-3 cert-grid mt-0">
-                        <div class="col-12">
-                            <a class="contact-tile" href="https://www.credly.com/earner/earned/badge/26264633-9031-4a9e-a353-98b5489c7375" target="_blank" rel="noopener">
-                                <img class="credly-badge" src="assets/Credly.png" alt="Credly verified digital badge" width="64" height="64">
-                                <span>
-                                    <span class="contact-label">Verified digital badge · Click to verify on Credly</span>
-                                    <span class="contact-value">View my verified badge on Credly</span>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                </section>
-                <!-- Certificates End -->
-
-                <!-- Contact Start -->
-                <section class="py-5" id="contact">
-                    <h2 class="title pb-3 mb-5">Contact Me</h2>
-                    <div class="row g-3 mb-4">
-                        <div class="col-md-4">
-                            <a class="contact-tile" href="mailto:bbhg.work@gmail.com">
-                                <span class="contact-icon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                                <span>
-                                    <span class="contact-label">Email</span>
-                                    <span class="contact-value">bbhg.work@gmail.com</span>
-                                </span>
-                            </a>
-                        </div>
-                        <div class="col-md-4">
-                            <a class="contact-tile" href="tel:+971502859094">
-                                <span class="contact-icon"><i class="fa fa-phone-alt" aria-hidden="true"></i></span>
-                                <span>
-                                    <span class="contact-label">Phone / WhatsApp</span>
-                                    <span class="contact-value">+971 50 285 9094</span>
-                                </span>
-                            </a>
-                        </div>
-                        <div class="col-md-4">
-                            <a class="contact-tile" href="https://www.linkedin.com/in/badr-albdulmajeed-b45437155/" target="_blank" rel="noopener">
-                                <span class="contact-icon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
-                                <span>
-                                    <span class="contact-label">LinkedIn</span>
-                                    <span class="contact-value">badr-albdulmajeed</span>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                    <form action="mailto:bbhg.work@gmail.com" method="post" enctype="text/plain" onsubmit="window.location.href='mailto:bbhg.work@gmail.com?subject=' + encodeURIComponent(this.subject.value) + '&body=' + encodeURIComponent(this.message.value); return false;">
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control border-0 bg-secondary" id="name" name="name" placeholder="Your Name" required>
-                                    <label for="name">Your Name</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="email" class="form-control border-0 bg-secondary" id="email" name="email" placeholder="Your Email" required>
-                                    <label for="email">Your Email</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control border-0 bg-secondary" id="subject" name="subject" placeholder="Subject" required>
-                                    <label for="subject">Subject</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <textarea class="form-control border-0 bg-secondary message-field" placeholder="Leave a message here" id="message" name="message" required></textarea>
-                                    <label for="message">Message</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
-                            </div>
-                        </div>
-                    </form>
-                </section>
-                <!-- Contact End -->
-
-                <!-- Footer Start -->
-                <footer>
-                    <div class="bg-secondary text-light text-center p-5">
-                        <div class="d-flex justify-content-center mb-4 footer-social">
-                            <a class="btn btn-square mx-1" href="https://www.linkedin.com/in/badr-albdulmajeed-b45437155/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
-                            <a class="btn btn-square mx-1" href="https://wa.me/971502859094" target="_blank" rel="noopener" title="WhatsApp" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
-                            <a class="btn btn-square mx-1" href="https://github.com/bader915" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
-                            <a class="btn btn-square mx-1" href="mailto:bbhg.work@gmail.com" title="Email" aria-label="Email"><i class="fa fa-envelope" aria-hidden="true"></i></a>
-                        </div>
-                        <p class="m-0">&copy; 2026 Badr Albdulmajeed. All Rights Reserved.</p>
-                    </div>
-                </footer>
-                <!-- Footer End -->
-            </main>
-            <!-- Content End -->
-        </div>
-    </div>
-
-    <!-- Back to Top -->
-    <a href="#" class="back-to-top" aria-label="Back to top"><i class="fa fa-angle-double-up" aria-hidden="true"></i></a>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+  <p>Badr Albdulmajeed's portfolio has moved.<br><a href="https://bader915.github.io/portfolio/">Go to the new portfolio</a></p>
 </body>
 </html>
